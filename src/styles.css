@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+* {
+    outline: none;
+}
+.hidden {
+    visibility: hidden;
+}
+svg {
+    height: 24px;
+    width: 24px;
+}
+.flex, [flex] {
+    flex: 1 1 auto;
+}
+.menu-icon {
+    padding-bottom: 12px;
+}
+/* Progress spinner */
+.is-loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.loading-indicator {
+    width: 50px !important;
+    height: 50px !important;
+}
+/* Styles for flex and so on */
+.radio-group, .section {
+    display: inline-flex;
+    flex-direction: column;
+}
+.radio, .checkbox {
+    margin: 5px;
+}
+.full-width {
+    width: 100%;
+}
+button[md-button]:not(.no-caps), button[md-raised-button]:not(.no-caps) {
+    text-transform: uppercase;
+}
+.active-link {
+    background-color: #ff4081;
+}
+img {
+    width: 100%;
+}
+.fixed-toolbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+}
+.app-action {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+#content {
+    padding: 10px;
+}

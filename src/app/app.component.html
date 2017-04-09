@@ -1,3 +1,43 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-container fullscreen>
+    <md-sidenav #sidenav>
+        <md-nav-list>
+            <h3 md-subheader>Links</h3>
+            <a md-list-item *ngFor="let link of links" (click)="sidenav.close()" [routerLink]="[link.href]" (click)="goToUrl(link)">
+                <md-icon md-list-icon svgIcon="{{link.icon}}"></md-icon>
+                <h3 md-line>{{link.name}}</h3>
+            </a>
+            <h3 md-subheader>Other</h3>
+            <a md-list-item (click)="sidenav.close(); sendFeedback()">
+                <md-icon md-list-icon svgIcon="message-alert" color="accent"></md-icon>
+                <h3 md-line>Send Feedback</h3>
+            </a>
+        </md-nav-list>
+    </md-sidenav>
+    <md-progress-bar mode="indeterminate" color="accent" *ngIf="loading"></md-progress-bar>
+    <md-toolbar color="primary" class="fixed-toolbar" style="z-index: 1;">
+        <button md-icon-button (click)="sidenav.toggle()" mdTooltip="Toggle Sidenav" mdTooltipPosition="below">
+            <md-icon svgIcon="menu"></md-icon>
+        </button>
+        <h4>{{docName}}</h4>
+        <span flex></span>
+        <button md-icon-button [mdMenuTriggerFor]="more">
+                <md-icon svgIcon="dots-vertical"></md-icon>
+            </button>
+        <md-menu #more="mdMenu">
+            <button md-menu-item (click)="openSettings()">
+                <md-icon svgIcon="settings" class="menu-icon"></md-icon>
+                <span>Settings</span>
+            </button>
+            <button md-menu-item (click)="sendFeedback()">
+                <md-icon svgIcon="message-alert" class="menu-icon"></md-icon>
+                <span>Send Feedback</span>
+            </button>
+        </md-menu>
+    </md-toolbar>
+    <div id="content">
+        <router-outlet></router-outlet>
+    </div>
+</md-sidenav-container>
+<span class="app-action">
+        <button md-fab (click)="scrollToTop()" mdTooltip="Scroll to top" mdTooltipPosition="above" color="primary"><md-icon svgIcon="chevron-up"></md-icon></button>
+</span>

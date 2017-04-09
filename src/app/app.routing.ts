@@ -1,0 +1,27 @@
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+// App components
+import { HomeComponent } from "./partials/home.component";
+import { AboutComponent } from './partials/about.component';
+// App components -> Projects
+import { ProjectFirstModComponent } from './partials/projects/firstmod.component';
+import { ProjectSwiftComponent } from './partials/projects/swiftapp.component';
+import { ProjectsComponent } from './partials/projects.component';
+/**
+ * Routes used for routing the app
+ * @version 1.0.2
+ * @author Edric Chan
+ * @example In your `app.module.ts`, import `routing` into `imports` in `NgModule`
+ * @description Paths to route to with components
+ * @type Routes[]
+ */
+export const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'projects', component: ProjectsComponent, children: [
+    {path: 'swift', component: ProjectSwiftComponent},
+    {path: 'mod', component: ProjectFirstModComponent}
+  ]},
+  { path: 'about', component: AboutComponent}
+];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -7,5 +7,7 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-
+if (environment.showDebug) {
+  console.debug('In debug mode.');
+}
 platformBrowserDynamic().bootstrapModule(AppModule);

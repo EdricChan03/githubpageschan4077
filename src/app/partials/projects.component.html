@@ -1,0 +1,18 @@
+<md-nav-list>
+    <a md-list-item *ngFor="let project of projects" [routerLink]="['/projects'+project.href]" routerLinkActive="active-link"
+        (click)="selected(project)">
+        <md-icon md-list-icon svgIcon="{{project.icon}}" *ngIf="project.hasIcon"></md-icon>
+        <h3 md-line>{{project.name}}</h3>
+        <p *ngIf="project.hasDesc" md-line>{{project.desc}}</p>
+    </a>
+</md-nav-list>
+<section>
+    <md-toolbar color="primary" class="fixed-toolbar" style="z-index: 2;">
+        <h4>{{projectSelected.name}}</h4>
+        <span flex></span>
+        <button md-icon-button mdTooltip="View on Github" (click)="goToGithub(projectSelected.githubUrl)">
+        <md-icon svgIcon="github-circle"></md-icon>
+    </button>
+    </md-toolbar>
+    <router-outlet></router-outlet>
+</section>

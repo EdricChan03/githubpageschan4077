@@ -1,0 +1,11 @@
+<h2 md-dialog-title>Redirect Notice</h2>
+<md-dialog-content themeColor="isDarkTheme">
+    <h3>NOTICE:</h3>
+    <p>You're leaving our site. If you didn't mean to click a link, please click <code>cancel</code>. If you did mean to, click <code>Redirect</code></p>
+    <p>The link you clicked is: <em>{{url}}</em></p>
+    <p class="bold">Note that you have to allow popups in order for this to work.</p>
+</md-dialog-content>
+<md-dialog-actions align="end">
+    <button md-button (click)="dialogRef.close('cancel')" color="primary">Cancel</button>
+    <button md-button (click)="dialogRef.close('redirect')" color="primary">Redirect</button>
+</md-dialog-actions>
