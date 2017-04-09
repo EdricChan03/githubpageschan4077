@@ -81,7 +81,11 @@ var AppComponent = (function () {
         ];
         this.docName = document.title;
         this.loading = true;
-        router.events.subscribe(function () {
+        this.router.events.subscribe(function (event) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* NavigationEnd */]) {
+                ga('set', 'page', event.urlAfterRedirects);
+                ga('send', 'pageview');
+            }
             setTimeout(function () {
                 _this.loading = false;
             }, 2000);
@@ -145,9 +149,7 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.scrollToTop = function () {
         console.log('Scrolling to top...');
-        console.log(window);
         document.getElementById('content').scrollIntoView();
-        window.scrollTo(0, 0);
     };
     AppComponent.prototype.ngOnInit = function () {
         // Sets settings to either parsed JSON of localStorage `settings`
@@ -409,7 +411,7 @@ var environment = {
 /***/ 196:
 /***/ (function(module, exports) {
 
-module.exports = "<md-sidenav-container fullscreen>\n    <md-sidenav #sidenav>\n        <md-nav-list>\n            <h3 md-subheader>Links</h3>\n            <a md-list-item *ngFor=\"let link of links\" (click)=\"sidenav.close()\" [routerLink]=\"[link.href]\" (click)=\"goToUrl(link)\">\n                <md-icon md-list-icon svgIcon=\"{{link.icon}}\"></md-icon>\n                <h3 md-line>{{link.name}}</h3>\n            </a>\n            <h3 md-subheader>Other</h3>\n            <a md-list-item (click)=\"sidenav.close(); sendFeedback()\">\n                <md-icon md-list-icon svgIcon=\"message-alert\" color=\"accent\"></md-icon>\n                <h3 md-line>Send Feedback</h3>\n            </a>\n        </md-nav-list>\n    </md-sidenav>\n    <md-progress-bar mode=\"indeterminate\" color=\"accent\" *ngIf=\"loading\"></md-progress-bar>\n    <md-toolbar color=\"primary\" class=\"fixed-toolbar\" style=\"z-index: 1;\">\n        <button md-icon-button (click)=\"sidenav.toggle()\" mdTooltip=\"Toggle Sidenav\" mdTooltipPosition=\"below\">\n            <md-icon svgIcon=\"menu\"></md-icon>\n        </button>\n        <h4>{{docName}}</h4>\n        <span flex></span>\n        <button md-icon-button [mdMenuTriggerFor]=\"more\">\n                <md-icon svgIcon=\"dots-vertical\"></md-icon>\n            </button>\n        <md-menu #more=\"mdMenu\">\n            <button md-menu-item (click)=\"openSettings()\">\n                <md-icon svgIcon=\"settings\" class=\"menu-icon\"></md-icon>\n                <span>Settings</span>\n            </button>\n            <button md-menu-item (click)=\"sendFeedback()\">\n                <md-icon svgIcon=\"message-alert\" class=\"menu-icon\"></md-icon>\n                <span>Send Feedback</span>\n            </button>\n        </md-menu>\n    </md-toolbar>\n    <div id=\"content\">\n        <router-outlet></router-outlet>\n    </div>\n</md-sidenav-container>\n<span class=\"app-action\">\n        <button md-fab (click)=\"scrollToTop()\" mdTooltip=\"Scroll to top\" mdTooltipPosition=\"above\" color=\"primary\"><md-icon svgIcon=\"chevron-up\"></md-icon></button>\n</span>"
+module.exports = "<md-sidenav-container fullscreen>\n    <md-sidenav #sidenav>\n        <md-nav-list>\n            <h3 md-subheader>Links</h3>\n            <a md-list-item *ngFor=\"let link of links\" (click)=\"sidenav.close()\" [routerLink]=\"[link.href]\" (click)=\"goToUrl(link)\">\n                <md-icon md-list-icon svgIcon=\"{{link.icon}}\"></md-icon>\n                <h3 md-line>{{link.name}}</h3>\n            </a>\n            <h3 md-subheader>Other</h3>\n            <a md-list-item (click)=\"sidenav.close(); sendFeedback()\">\n                <md-icon md-list-icon svgIcon=\"message-alert\" color=\"accent\"></md-icon>\n                <h3 md-line>Send Feedback</h3>\n            </a>\n        </md-nav-list>\n    </md-sidenav>\n    <md-progress-bar mode=\"indeterminate\" color=\"accent\" *ngIf=\"loading\"></md-progress-bar>\n    <md-toolbar color=\"primary\" class=\"fixed-toolbar mat-elevation-z3\" style=\"z-index: 1;\">\n        <button md-icon-button (click)=\"sidenav.toggle()\" mdTooltip=\"Toggle Sidenav\" mdTooltipPosition=\"below\">\n            <md-icon svgIcon=\"menu\"></md-icon>\n        </button>\n        <h4>{{docName}}</h4>\n        <span flex></span>\n        <button md-icon-button [mdMenuTriggerFor]=\"more\">\n                <md-icon svgIcon=\"dots-vertical\"></md-icon>\n            </button>\n        <md-menu #more=\"mdMenu\">\n            <button md-menu-item (click)=\"openSettings()\">\n                <md-icon svgIcon=\"settings\" class=\"menu-icon\"></md-icon>\n                <span>Settings</span>\n            </button>\n            <button md-menu-item (click)=\"sendFeedback()\">\n                <md-icon svgIcon=\"message-alert\" class=\"menu-icon\"></md-icon>\n                <span>Send Feedback</span>\n            </button>\n        </md-menu>\n    </md-toolbar>\n    <div id=\"content\">\n        <router-outlet></router-outlet>\n    </div>\n</md-sidenav-container>\n<span class=\"app-action\">\n        <button md-fab (click)=\"scrollToTop()\" mdTooltip=\"Scroll to top\" mdTooltipPosition=\"above\" color=\"primary\"><md-icon svgIcon=\"chevron-up\"></md-icon></button>\n</span>"
 
 /***/ }),
 
@@ -451,7 +453,7 @@ module.exports = "<h1>Welcome to <a href=\"https://githubpageschan4077.firebasea
 /***/ 202:
 /***/ (function(module, exports) {
 
-module.exports = "<md-nav-list>\n    <a md-list-item *ngFor=\"let project of projects\" [routerLink]=\"['/projects'+project.href]\" routerLinkActive=\"active-link\"\n        (click)=\"selected(project)\">\n        <md-icon md-list-icon svgIcon=\"{{project.icon}}\" *ngIf=\"project.hasIcon\"></md-icon>\n        <h3 md-line>{{project.name}}</h3>\n        <p *ngIf=\"project.hasDesc\" md-line>{{project.desc}}</p>\n    </a>\n</md-nav-list>\n<section>\n    <md-toolbar color=\"primary\" class=\"fixed-toolbar\" style=\"z-index: 2;\">\n        <h4>{{projectSelected.name}}</h4>\n        <span flex></span>\n        <button md-icon-button mdTooltip=\"View on Github\" (click)=\"goToGithub(projectSelected.githubUrl)\">\n        <md-icon svgIcon=\"github-circle\"></md-icon>\n    </button>\n    </md-toolbar>\n    <router-outlet></router-outlet>\n</section>"
+module.exports = "<md-nav-list>\n    <a md-list-item *ngFor=\"let project of projects\" [routerLink]=\"['/projects'+project.href]\" routerLinkActive=\"active-link\"\n        (click)=\"selected(project)\">\n        <md-icon md-list-icon svgIcon=\"{{project.icon}}\" *ngIf=\"project.hasIcon\"></md-icon>\n        <h3 md-line>{{project.name}}</h3>\n        <p *ngIf=\"project.hasDesc\" md-line>{{project.desc}}</p>\n    </a>\n</md-nav-list>\n<section>\n    <md-toolbar color=\"warn\" class=\"fixed-toolbar mat-elevation-z3\" style=\"z-index: 2;\">\n        <h4>{{projectSelected.name}}</h4>\n        <span flex></span>\n        <button md-icon-button mdTooltip=\"View Readme on Github\" (click)=\"goToGithub(projectSelected.readmeUrl)\">\n            <md-icon svgIcon=\"book-open-variant\"></md-icon>\n        </button>\n        <button md-icon-button mdTooltip=\"View Project on Github\" (click)=\"goToGithub(projectSelected.githubUrl)\">\n        <md-icon svgIcon=\"github-circle\"></md-icon>\n    </button>\n    </md-toolbar>\n    <div class=\"project-content\">\n    <router-outlet></router-outlet>\n    </div>\n</section>"
 
 /***/ }),
 
@@ -794,8 +796,8 @@ var ProjectsComponent = (function () {
         this.router = router;
         this.urlDialogService = urlDialogService;
         this.projects = [
-            { href: '/swift', icon: 'language-swift', hasIcon: true, name: 'First-Application', hasDesc: true, desc: 'A test on Swift 3.0', githubUrl: 'https://github.com/Chan4077/MyFirstApp' },
-            { href: '/mod', icon: 'minecraft', hasIcon: true, name: 'First-Mod', hasDesc: true, desc: 'My first mod. Run on 1.11.2!', githubUrl: 'https://github.com/Chan4077/First-Mod' }
+            { href: '/swift', icon: 'language-swift', hasIcon: true, name: 'First-Application', hasDesc: true, desc: 'A test on Swift 3.0', githubUrl: 'https://github.com/Chan4077/First-Application', readmeUrl: 'https://github.com/Chan4077/First-Application/blob/master/README.md' },
+            { href: '/mod', icon: 'minecraft', hasIcon: true, name: 'First-Mod', hasDesc: true, desc: 'My first mod. Run on 1.11.2!', githubUrl: 'https://github.com/Chan4077/First-Mod', readmeUrl: 'https://github.com/Chan4077/First-Mod/blob/master/README.md' }
         ];
     }
     ProjectsComponent.prototype.goToGithub = function (url) {
