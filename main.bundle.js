@@ -47,7 +47,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dialogs_sendfeedback_component__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dialogs_settingsdialog_component__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_urldialog_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_urldialog_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -75,8 +75,6 @@ var AppComponent = (function () {
         this.links = [
             { icon: 'home', href: '/home', name: 'Home' },
             { icon: 'information', href: '/about', name: 'About' },
-            { icon: 'blogger', href: 'https://chanziyangedric.blogspot.com', name: 'Blog' },
-            { icon: 'github-circle', href: 'https://github.com/Chan4077/chan4077.github.io', name: 'View on Github' },
             { icon: 'flask', href: '/projects', name: 'Projects' }
         ];
         this.docName = document.title;
@@ -178,7 +176,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_material__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_markdown__ = __webpack_require__(122);
@@ -193,7 +191,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__dialogs_sendfeedback_component__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__dialogs_settingsdialog_component__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__dialogs_urldialog_component__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_urldialog_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_urldialog_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -411,7 +409,7 @@ var environment = {
 /***/ 196:
 /***/ (function(module, exports) {
 
-module.exports = "<md-sidenav-container fullscreen>\n    <md-sidenav #sidenav>\n        <md-nav-list>\n            <h3 md-subheader>Links</h3>\n            <a md-list-item *ngFor=\"let link of links\" (click)=\"sidenav.close()\" [routerLink]=\"[link.href]\" (click)=\"goToUrl(link)\">\n                <md-icon md-list-icon svgIcon=\"{{link.icon}}\"></md-icon>\n                <h3 md-line>{{link.name}}</h3>\n            </a>\n            <h3 md-subheader>Other</h3>\n            <a md-list-item (click)=\"sidenav.close(); sendFeedback()\">\n                <md-icon md-list-icon svgIcon=\"message-alert\" color=\"accent\"></md-icon>\n                <h3 md-line>Send Feedback</h3>\n            </a>\n        </md-nav-list>\n    </md-sidenav>\n    <md-progress-bar mode=\"indeterminate\" color=\"accent\" *ngIf=\"loading\"></md-progress-bar>\n    <md-toolbar color=\"primary\" class=\"fixed-toolbar mat-elevation-z3\" style=\"z-index: 1;\">\n        <button md-icon-button (click)=\"sidenav.toggle()\" mdTooltip=\"Toggle Sidenav\" mdTooltipPosition=\"below\">\n            <md-icon svgIcon=\"menu\"></md-icon>\n        </button>\n        <h4>{{docName}}</h4>\n        <span flex></span>\n        <button md-icon-button [mdMenuTriggerFor]=\"more\">\n                <md-icon svgIcon=\"dots-vertical\"></md-icon>\n            </button>\n        <md-menu #more=\"mdMenu\">\n            <button md-menu-item (click)=\"openSettings()\">\n                <md-icon svgIcon=\"settings\" class=\"menu-icon\"></md-icon>\n                <span>Settings</span>\n            </button>\n            <button md-menu-item (click)=\"sendFeedback()\">\n                <md-icon svgIcon=\"message-alert\" class=\"menu-icon\"></md-icon>\n                <span>Send Feedback</span>\n            </button>\n        </md-menu>\n    </md-toolbar>\n    <div id=\"content\">\n        <router-outlet></router-outlet>\n    </div>\n</md-sidenav-container>\n<span class=\"app-action\">\n        <button md-fab (click)=\"scrollToTop()\" mdTooltip=\"Scroll to top\" mdTooltipPosition=\"above\" color=\"primary\"><md-icon svgIcon=\"chevron-up\"></md-icon></button>\n</span>"
+module.exports = "<md-sidenav-container fullscreen>\n    <md-sidenav #sidenav>\n        <md-toolbar color=\"accent\" class=\"mat-elevation-z3\">\n            <h4>Links</h4>\n        </md-toolbar>\n        <md-nav-list>\n            <h3 md-subheader>Links</h3>\n            <a md-list-item *ngFor=\"let link of links\" (click)=\"sidenav.close()\" [routerLink]=\"[link.href]\" (click)=\"goToUrl(link)\" routerLinkActive=\"active-link\">\n                <md-icon md-list-icon svgIcon=\"{{link.icon}}\"></md-icon>\n                <h3 md-line>{{link.name}}</h3>\n            </a>\n            <h3 md-subheader>Other</h3>\n            <a md-list-item (click)=\"sidenav.close(); goToUrl('https://chanziyangedric.blogspot.com')\">\n                <md-icon md-list-icon svgIcon=\"blogger\" color=\"accent\"></md-icon>\n                <h3 md-line>Blog</h3>\n            </a>\n            <a md-list-item (click)=\"sidenav.close(); goToUrl('https://github.com/Chan4077/chan4077.github.io')\">\n                <md-icon md-list-icon svgIcon=\"github-circle\" color=\"accent\"></md-icon>\n                <h3 md-line>View on Github</h3>\n            </a>\n            <a md-list-item (click)=\"sidenav.close(); sendFeedback()\">\n                <md-icon md-list-icon svgIcon=\"message-alert\" color=\"accent\"></md-icon>\n                <h3 md-line>Send Feedback</h3>\n            </a>\n        </md-nav-list>\n    </md-sidenav>\n    <md-progress-bar mode=\"indeterminate\" color=\"accent\" *ngIf=\"loading\"></md-progress-bar>\n    <md-toolbar color=\"primary\" class=\"fixed-toolbar mat-elevation-z3\" style=\"z-index: 1;\">\n        <button md-icon-button (click)=\"sidenav.toggle()\" mdTooltip=\"Toggle Sidenav\" mdTooltipPosition=\"below\">\n            <md-icon svgIcon=\"menu\"></md-icon>\n        </button>\n        <h4>{{docName}}</h4>\n        <span flex></span>\n        <button md-icon-button [mdMenuTriggerFor]=\"more\">\n                <md-icon svgIcon=\"dots-vertical\"></md-icon>\n            </button>\n        <md-menu #more=\"mdMenu\">\n            <button md-menu-item (click)=\"openSettings()\">\n                <md-icon svgIcon=\"settings\" class=\"menu-icon\"></md-icon>\n                <span>Settings</span>\n            </button>\n            <button md-menu-item (click)=\"sendFeedback()\">\n                <md-icon svgIcon=\"message-alert\" class=\"menu-icon\"></md-icon>\n                <span>Send Feedback</span>\n            </button>\n        </md-menu>\n    </md-toolbar>\n    <div id=\"content\">\n        <router-outlet></router-outlet>\n    </div>\n</md-sidenav-container>\n<span class=\"app-action\">\n        <button md-fab (click)=\"scrollToTop()\" mdTooltip=\"Scroll to top\" mdTooltipPosition=\"above\" color=\"primary\"><md-icon svgIcon=\"chevron-up\"></md-icon></button>\n</span>"
 
 /***/ }),
 
@@ -446,7 +444,7 @@ module.exports = "This was created with <a href=\"https://angular.io\" (click)=\
 /***/ 201:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Welcome to <a href=\"https://githubpageschan4077.firebaseapp.com\">Chan4077.Github.io <em>(version 2)</em></a>!</h1>\n<p>This is meant to test out <a href=\"https://chan4077.github.io\">Chan4077.Github.io <em>(version 1)</em></a> with Angular Material2!</p>\n<p>Pretty soon, the release for version 2 will be out! </p>\n"
+module.exports = "<div class=\"padding-content\">\n    <h1>Welcome to <a href=\"https://githubpageschan4077.firebaseapp.com\" (click)=\"goToUrl($event)\">Chan4077.Github.io <em>(version 2)</em></a>!</h1>\n    <p>This is meant to test out <a href=\"https://chan4077.github.io\" (click)=\"goToUrl($event)\">Chan4077.Github.io <em>(version 1)</em></a> with Angular\n        Material2!</p>\n    <p><del>Pretty soon, the release for version 2 will be out!</del> <strong>UPDATE:</strong> This site is already updated to angular material2!</p>\n    <p><em>View the old repo <a href=\"https://github.com/Chan4077/chan4077.github.io_old\" (click)=\"goToUrl($event)\">here</a></em></p>\n</div>"
 
 /***/ }),
 
@@ -471,15 +469,7 @@ module.exports = "<markdown path=\"https://raw.githubusercontent.com/Chan4077/Fi
 
 /***/ }),
 
-/***/ 254:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(110);
-
-
-/***/ }),
-
-/***/ 31:
+/***/ 22:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -546,13 +536,21 @@ var _a, _b;
 
 /***/ }),
 
+/***/ 254:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(110);
+
+
+/***/ }),
+
 /***/ 68:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SendFeedbackDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -610,7 +608,7 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(31);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsDialog; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -704,7 +702,7 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_urldialog_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_urldialog_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -746,7 +744,8 @@ var _a;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_urldialog_service__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(2);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -754,19 +753,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(urlDialogService) {
+        this.urlDialogService = urlDialogService;
     }
+    HomeComponent.prototype.goToUrl = function (ev) {
+        this.url = ev.srcElement.attributes.href.value;
+        console.log(this.url);
+        ev.preventDefault();
+        this.urlDialogService.goToUrl(this.url);
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_1" /* Component */])({
         selector: 'home',
         template: __webpack_require__(201)
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_urldialog_service__["a" /* UrlDialogService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_urldialog_service__["a" /* UrlDialogService */]) === "function" && _a || Object])
 ], HomeComponent);
 
+var _a;
 //# sourceMappingURL=home.component.js.map
 
 /***/ }),
@@ -777,7 +789,7 @@ HomeComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_urldialog_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_urldialog_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
