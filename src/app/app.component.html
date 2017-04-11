@@ -1,12 +1,23 @@
 <md-sidenav-container fullscreen>
     <md-sidenav #sidenav>
+        <md-toolbar color="accent" class="mat-elevation-z3">
+            <h4>Links</h4>
+        </md-toolbar>
         <md-nav-list>
             <h3 md-subheader>Links</h3>
-            <a md-list-item *ngFor="let link of links" (click)="sidenav.close()" [routerLink]="[link.href]" (click)="goToUrl(link)">
+            <a md-list-item *ngFor="let link of links" (click)="sidenav.close()" [routerLink]="[link.href]" (click)="goToUrl(link)" routerLinkActive="active-link">
                 <md-icon md-list-icon svgIcon="{{link.icon}}"></md-icon>
                 <h3 md-line>{{link.name}}</h3>
             </a>
             <h3 md-subheader>Other</h3>
+            <a md-list-item (click)="sidenav.close(); goToUrl('https://chanziyangedric.blogspot.com')">
+                <md-icon md-list-icon svgIcon="blogger" color="accent"></md-icon>
+                <h3 md-line>Blog</h3>
+            </a>
+            <a md-list-item (click)="sidenav.close(); goToUrl('https://github.com/Chan4077/chan4077.github.io')">
+                <md-icon md-list-icon svgIcon="github-circle" color="accent"></md-icon>
+                <h3 md-line>View on Github</h3>
+            </a>
             <a md-list-item (click)="sidenav.close(); sendFeedback()">
                 <md-icon md-list-icon svgIcon="message-alert" color="accent"></md-icon>
                 <h3 md-line>Send Feedback</h3>
@@ -14,7 +25,7 @@
         </md-nav-list>
     </md-sidenav>
     <md-progress-bar mode="indeterminate" color="accent" *ngIf="loading"></md-progress-bar>
-    <md-toolbar color="primary" class="fixed-toolbar" style="z-index: 1;">
+    <md-toolbar color="primary" class="fixed-toolbar mat-elevation-z3" style="z-index: 1;">
         <button md-icon-button (click)="sidenav.toggle()" mdTooltip="Toggle Sidenav" mdTooltipPosition="below">
             <md-icon svgIcon="menu"></md-icon>
         </button>

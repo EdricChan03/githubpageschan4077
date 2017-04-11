@@ -9,8 +9,8 @@ export class ProjectsComponent implements OnInit{
     projectSelected: any;
     constructor(private router: Router, private urlDialogService: UrlDialogService) {}
     projects = [
-        {href: '/swift', icon: 'language-swift', hasIcon: true, name: 'First-Application', hasDesc: true, desc: 'A test on Swift 3.0', githubUrl: 'https://github.com/Chan4077/MyFirstApp'},
-        {href: '/mod', icon: 'minecraft', hasIcon: true, name: 'First-Mod', hasDesc: true, desc: 'My first mod. Run on 1.11.2!', githubUrl: 'https://github.com/Chan4077/First-Mod'}
+        {href: '/swift', icon: 'language-swift', hasIcon: true, name: 'First-Application', hasDesc: true, desc: 'A test on Swift 3.0', githubUrl: 'https://github.com/Chan4077/First-Application', readmeUrl: 'https://github.com/Chan4077/First-Application/blob/master/README.md'},
+        {href: '/mod', icon: 'minecraft', hasIcon: true, name: 'First-Mod', hasDesc: true, desc: 'My first mod. Run on 1.11.2!', githubUrl: 'https://github.com/Chan4077/First-Mod', readmeUrl: 'https://github.com/Chan4077/First-Mod/blob/master/README.md'}
     ]
     goToGithub(url) {
         this.urlDialogService.goToUrl(url);

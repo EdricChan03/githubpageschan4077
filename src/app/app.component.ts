@@ -4,16 +4,22 @@ import { MdDialog, MdSnackBar } from '@angular/material';
 import { SendFeedbackDialog } from './dialogs/sendfeedback.component';
 import { SettingsDialog } from './dialogs/settingsdialog.component';
 import { UrlDialogService } from './services/urldialog.service';
+declare let ga: Function;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  constructor(public dialog: MdDialog, public snackbar: MdSnackBar, private urlDialogService: UrlDialogService, private router: Router) {
-    router.events.subscribe(()=> {
-      setTimeout(() => {
-        this.loading = false;
-      }, 2000)
+  constructor(public dialog: MdDialog, public snackbar: MdSnackBar, private urlDialogService: UrlDialogService, public router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+          ga('set', 'page', event.urlAfterRedirects);
+          ga('send', 'pageview');
+        }
+        setTimeout(() => {
+          this.loading = false;
+        }, 2000);
     })
   }
   settings: any;
@@ -21,8 +27,6 @@ export class AppComponent implements OnInit {
   links = [
     { icon: 'home', href: '/home', name: 'Home' },
     { icon: 'information', href: '/about', name: 'About'},
-    { icon: 'blogger', href: 'https://chanziyangedric.blogspot.com', name: 'Blog'},
-    { icon: 'github-circle', href: 'https://github.com/Chan4077/chan4077.github.io', name: 'View on Github'},
     { icon: 'flask', href: '/projects', name: 'Projects'}
   ]
   docName = document.title;
@@ -78,9 +82,7 @@ export class AppComponent implements OnInit {
   }
   scrollToTop() {
     console.log('Scrolling to top...');
-    console.log(window);
     document.getElementById('content').scrollIntoView();
-    window.scrollTo(0,0);
   }
   ngOnInit() {
     // Sets settings to either parsed JSON of localStorage `settings`

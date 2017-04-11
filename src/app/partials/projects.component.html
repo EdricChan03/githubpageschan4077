@@ -7,12 +7,17 @@
     </a>
 </md-nav-list>
 <section>
-    <md-toolbar color="primary" class="fixed-toolbar" style="z-index: 2;">
+    <md-toolbar color="warn" class="fixed-toolbar mat-elevation-z3" style="z-index: 2;">
         <h4>{{projectSelected.name}}</h4>
         <span flex></span>
-        <button md-icon-button mdTooltip="View on Github" (click)="goToGithub(projectSelected.githubUrl)">
+        <button md-icon-button mdTooltip="View Readme on Github" (click)="goToGithub(projectSelected.readmeUrl)">
+            <md-icon svgIcon="book-open-variant"></md-icon>
+        </button>
+        <button md-icon-button mdTooltip="View Project on Github" (click)="goToGithub(projectSelected.githubUrl)">
         <md-icon svgIcon="github-circle"></md-icon>
     </button>
     </md-toolbar>
+    <div class="project-content">
     <router-outlet></router-outlet>
+    </div>
 </section>
