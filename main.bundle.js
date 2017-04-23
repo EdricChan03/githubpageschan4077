@@ -199,7 +199,7 @@ var AppComponent = (function () {
     AppComponent.prototype.ngAfterViewChecked = function () {
         var _this = this;
         this.scrollToTopBtn = document.getElementById('scroll-to-top-btn');
-        if (this.experiments.shareDialog) {
+        if (this.experiments.shareDialog || false) {
             // Shows the share dialog button
             setTimeout(function () {
                 var cssString = "bottom: 95px; z-index: 1;";
