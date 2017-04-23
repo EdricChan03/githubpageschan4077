@@ -3,14 +3,15 @@
  * @version 1.0.0
  * @example Import into <code>app.module.ts</code> as <code>MarketMaterialModule</code>
  * @author Edric Chan
- * @description Based on this PR which is currently not merged (this PR will depreceate <code>MaterialModule</code>):
+ * @description Based on this PR which is merged:
  * https://github.com/angular/material2/pull/3840
  */
 
 // NgModule
 import { NgModule } from '@angular/core';
 // MaterialModules to import
-import { MdInputModule, MdDialogModule, MdTooltipModule, MdButtonModule, MdIconModule, MdTabsModule, MdCardModule, OverlayModule, MdProgressSpinnerModule, MdSnackBarModule, MdMenuModule, MdCheckboxModule, MdListModule, MdRippleModule, StyleModule, A11yModule, PlatformModule, CompatibilityModule, ObserveContentModule, MdSidenavModule, MdToolbarModule, MdRadioModule, MdProgressBarModule } from '@angular/material';
+import { MdInputModule, MdDialogModule, MdTooltipModule, MdButtonModule, MdIconModule, MdTabsModule, MdCardModule, OverlayModule, MdProgressSpinnerModule, MdSnackBarModule, MdMenuModule, MdCheckboxModule, MdListModule, MdRippleModule, StyleModule, A11yModule, PlatformModule, CompatibilityModule, ObserveContentModule, MdSidenavModule, MdToolbarModule, MdRadioModule, MdProgressBarModule, MdGridListModule, RtlModule, MdSelectModule } from '@angular/material';
+import { MdGridTile } from "@angular/material/typings/grid-list/grid-tile";
 // List of components to import
 const MATERIAL_MODULES = [
     MdInputModule,
@@ -32,10 +33,13 @@ const MATERIAL_MODULES = [
     MdToolbarModule,
     StyleModule,
     A11yModule,
+    RtlModule,
     PlatformModule,
     CompatibilityModule,
     ObserveContentModule,
-    MdRadioModule
+    MdRadioModule,
+    MdGridListModule,
+    MdSelectModule
 ]
 @NgModule({
     imports: MATERIAL_MODULES,

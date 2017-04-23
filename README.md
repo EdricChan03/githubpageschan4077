@@ -17,18 +17,19 @@ View [package.json](/package.json) for more information.
 
 | Dependency name                     | Dependency version              | NPM          | Repo            |
 |-------------------------------------|---------------------------------|--------------|-----------------|
-| `@angular/animations`               | 4.0.1                           | [npm][npm1]  | [Github][git1]  |
-| `@angular/common`                   | 4.0.1                           | [npm][npm2]  | [Github][git2]  |
-| `@angular/compiler`                 | 4.0.1                           | [npm][npm3]  | [Github][git3]  |
-| `@angular/compiler-cli`             | 4.0.1                           | [npm][npm4]  | [Github][git4]  |
-| `@angular/core`                     | 4.0.1                           | [npm][npm5]  | [Github][git5]  |
-| `@angular/forms`                    | 4.0.1                           | [npm][npm6]  | [Github][git6]  |
-| `@angular/http`                     | 4.0.1                           | [npm][npm7]  | [Github][git7]  |
+| `@angular/animations`               | 4.0.2                           | [npm][npm1]  | [Github][git1]  |
+| `@angular/common`                   | 4.0.2                           | [npm][npm2]  | [Github][git2]  |
+| `@angular/compiler`                 | 4.0.2                           | [npm][npm3]  | [Github][git3]  |
+| `@angular/compiler-cli`             | 4.0.2                           | [npm][npm4]  | [Github][git4]  |
+| `@angular/core`                     | 4.0.2                           | [npm][npm5]  | [Github][git5]  |
+| `@angular/flex-layout`               | 2.0.0-beta.8                    | [npm][npm36] | [Github][git36] |
+| `@angular/forms`                    | 4.0.2                           | [npm][npm6]  | [Github][git6]  |
+| `@angular/http`                     | 4.0.2                           | [npm][npm7]  | [Github][git7]  |
 | `@angular/material`                 | [master][master] (2.0.0-beta.3) | [npm][npm8]  | [Github][git8]  |
-| `@angular/platform-browser`         | 4.0.1                           | [npm][npm9]  | [Github][git9]  |
-| `@angular/platform-browser-dynamic` | 4.0.1                           | [npm][npm10] | [Github][git10] |
-| `@angular/platform-server`          | 4.0.1                           | [npm][npm11] | [Github][git11] |
-| `@angular/router`                   | 4.0.1                           | [npm][npm12] | [Github][git12] |
+| `@angular/platform-browser`         | 4.0.2                           | [npm][npm9]  | [Github][git9]  |
+| `@angular/platform-browser-dynamic` | 4.0.2                           | [npm][npm10] | [Github][git10] |
+| `@angular/platform-server`          | 4.0.2                           | [npm][npm11] | [Github][git11] |
+| `@angular/router`                   | 4.0.2                           | [npm][npm12] | [Github][git12] |
 | `angular2-highlight-js`             | 5.0.0                           | [npm][npm13] | [Github][git13] |
 | `core-js`                           | 5.0.0                           | [npm][npm14] | [Github][git14] |
 | `hammerjs`                          | 2.0.8                           | [npm][npm15] | [Github][git15] |
@@ -62,6 +63,7 @@ View [package.json](/package.json) for more information.
 [npm18]: https://npmjs.com/package/typescript
 [npm19]: https://npmjs.com/package/typings
 [npm20]: https://npmjs.com/package/zone.js
+[npm36]: https://www.npmjs.com/package/@angular/flex-layout
 <!--Github repo links-->
 [git1]: https://github.com/angular/angular
 [git2]: https://github.com/angular/angular
@@ -83,6 +85,7 @@ View [package.json](/package.json) for more information.
 [git18]: https://github.com/Microsoft/TypeScript
 [git19]: https://github.com/typings/typings
 [git20]: https://github.com/angular/zone.js
+[git36]: https://github.com/angular/flex-layout
 
 ## Dev Dependencies
 View [package.json](/package.json) for more information.

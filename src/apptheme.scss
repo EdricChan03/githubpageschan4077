@@ -1,0 +1,81 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+// TODO: Add more custom themes
+
+.indigo-pink {
+    $primary: mat-palette($mat-indigo);
+    $accent: mat-palette($mat-pink);
+
+    $indigo-pink-theme: mat-light-theme($primary, $accent);
+
+    @include angular-material-theme($indigo-pink-theme);
+    
+    .active-link {
+        background-color: mat-color($primary);
+        color: white !important;
+    }
+    .sticky-header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 56px;
+        z-index: 2;
+        width: 100%;
+        background-color: mat-color($accent);
+    }
+}
+.blue-pink {
+    $primary: mat-palette($mat-blue);
+    $accent: mat-palette($mat-pink);
+
+    $blue-pink-theme: mat-light-theme($primary, $accent);
+
+    @include angular-material-theme($blue-pink-theme);
+    
+    .active-link {
+        background-color: mat-color($primary);
+    }
+    .sticky-header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 56px;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        background-color: mat-color($accent);
+    }
+}
+.yellow-green {
+    $primary: mat-palette($mat-yellow);
+    $accent: mat-palette($mat-green);
+
+    $yellow-red-theme: mat-dark-theme($primary, $accent);
+
+    @include angular-material-theme($yellow-red-theme);
+    color: white;
+    a {
+        color: white;
+    }
+    a:active {
+        color: yellow;
+    }
+    .mat-selected {
+        color: mat-color($primary) !important;
+    }
+    .active-link {
+        background-color: mat-color($primary);
+        color: black !important;
+    }
+    .sticky-header {
+        display: inline-block;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 56px;
+        z-index: 2;
+        width: 100%;
+        height: 56px;
+        line-height: 56px;
+        white-space: nowrap;
+        background-color: mat-color($accent);
+    }
+}

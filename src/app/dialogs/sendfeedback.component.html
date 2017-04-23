@@ -1,58 +1,53 @@
 <h2 md-dialog-title>Send Feedback</h2>
 <md-dialog-content>
-    <div *ngIf="spinner" class="is-loading">
-        <md-progress-spinner mode="indeterminate" color="primary" class="loading-indicator"></md-progress-spinner>
-    </div>
-    <div [hidden]="spinner">
-    <md-tab-group>
-        <md-tab label="Send Feedback">
-            <h2>General Feedback</h2>
-            <p>Thanks for sending in your feedback! Fill up the following details below and click <code>Send</code> when you're
-                done.
-            </p>
-            <form #feedbackForm="ngForm">
-                <section class="section">
-                <md-input-container class="full-width">
-                    <input mdInput [(ngModel)]="feedback.name" placeholder="Name" required name="name">
-                    <md-error>This is required.</md-error>
-                </md-input-container>
-                <md-input-container class="full-width">
-                    <textarea mdInput [(ngModel)]="feedback.feedback" placeholder="Feedback" [formControl]="feedbackControl" name="feedback"></textarea>
-                    <md-hint align="end">{{feedback.feedback.length}} / 200</md-hint>
-                    <md-error *ngIf="feedbackControl.hasError('required')">This is required.</md-error>
-                    <md-error *ngIf="feedbackControl.hasError('minlength')">More than 5 characters are required.</md-error>
-                    <md-error *ngIf="feedbackControl.hasError('maxlength')">Less than 200 characters are required.</md-error>
-                </md-input-container>
-                <label for="feedbackType">What type of feedback are you reporting?</label>
-                <br>
-                <md-radio-group [(ngModel)]="feedback.type" id="feedbackType" class="radio-group" name="feedbacktype">
-                    <md-radio-button value="feature" class="radio">Feature Request</md-radio-button>
-                    <md-radio-button value="bug" class="radio">Bug Report</md-radio-button>
-                    <md-radio-button value="general" class="radio">General Feedback</md-radio-button>
-                </md-radio-group>
-                <br>
-                <label for="attachFiles">Attach any screenshots if needed.</label>
-                <br>
-                <button md-raised-button id="attachFiles"><md-icon svgIcon="upload"></md-icon> Attach Files</button>
-                <br>
-                <md-checkbox [(ngModel)]="feedback.sendViaEmail" name="sendViaEmail" class="checkbox">Send via email</md-checkbox>
-                <br>
-                <div [hidden]="!feedback.sendViaEmail">
-                    <md-input-container class="full-width">
-                        <input mdInput type="email" [(ngModel)]="feedback.email" placeholder="Email" name="email">
-                    </md-input-container>
-                </div>
-                </section>
-            </form>
-        </md-tab>
-        <md-tab label="Contact Me">
-            <h2>Contact Me</h2>
-            For your security, you will have to solve a <a href="https://google.com/recaptcha">Recaptcha</a> to view my personal
-            particulars.
-            <!--TODO: Add recaptcha-->
-        </md-tab>
-    </md-tab-group>
-    </div>
+        <md-tab-group selectedIndex="0" dynamicHeight>
+            <md-tab label="Send Feedback">
+                <h2>General Feedback</h2>
+                <p>Thanks for sending in your feedback! Fill up the following details below and click <code>Send</code> when
+                    you're done.
+                </p>
+                <form #feedbackForm="ngForm">
+                    <section class="section">
+                        <md-input-container class="full-width">
+                            <input mdInput [(ngModel)]="feedback.name" placeholder="Name" required name="name">
+                            <md-error>This is required.</md-error>
+                        </md-input-container>
+                        <md-input-container class="full-width">
+                            <textarea mdInput [(ngModel)]="feedback.feedback" placeholder="Feedback" [formControl]="feedbackControl" name="feedback"></textarea>
+                            <md-hint align="end">{{feedback.feedback.length}} / 200</md-hint>
+                            <md-error *ngIf="feedbackControl.hasError('required')">This is required.</md-error>
+                            <md-error *ngIf="feedbackControl.hasError('minlength')">More than 5 characters are required.</md-error>
+                            <md-error *ngIf="feedbackControl.hasError('maxlength')">Less than 200 characters are required.</md-error>
+                        </md-input-container>
+                        <label for="feedbackType">What type of feedback are you reporting?</label>
+                        <br>
+                        <md-radio-group [(ngModel)]="feedback.type" id="feedbackType" class="radio-group" name="feedbacktype">
+                            <md-radio-button value="feature" class="radio">Feature Request</md-radio-button>
+                            <md-radio-button value="bug" class="radio">Bug Report</md-radio-button>
+                            <md-radio-button value="general" class="radio">General Feedback</md-radio-button>
+                        </md-radio-group>
+                        <br>
+                        <label for="attachFiles">Attach any screenshots if needed.</label>
+                        <br>
+                        <button md-raised-button id="attachFiles"><md-icon svgIcon="upload"></md-icon> Attach Files</button>
+                        <br>
+                        <md-checkbox [(ngModel)]="feedback.sendViaEmail" name="sendViaEmail" class="checkbox">Send via email</md-checkbox>
+                        <br>
+                        <div [hidden]="!feedback.sendViaEmail">
+                            <md-input-container class="full-width">
+                                <input mdInput type="email" [(ngModel)]="feedback.email" placeholder="Email" name="email">
+                            </md-input-container>
+                        </div>
+                    </section>
+                </form>
+            </md-tab>
+            <md-tab label="Contact Me">
+                <h2>Contact Me</h2>
+                For your security, you will have to solve a <a href="https://google.com/recaptcha">Recaptcha</a> to view
+                my personal particulars.
+                <!--TODO: Add recaptcha-->
+            </md-tab>
+        </md-tab-group>
 </md-dialog-content>
 <md-dialog-actions align="end">
     <button md-button color="primary" (click)="dialogRef.close()">Cancel</button>

@@ -1,0 +1,9 @@
+<h2 md-dialog-title>Experiments <span class="badge beta"></span></h2>
+<md-dialog-content>
+    <section class="section">
+        <md-checkbox class="checkbox" [(ngModel)]="experiments.shareDialog">Enable share dialog</md-checkbox>
+    </section>
+</md-dialog-content>
+<md-dialog-actions>
+    <button md-button color="primary" md-dialog-close (click)="saveExperiments(experiments)">Save</button>
+</md-dialog-actions>

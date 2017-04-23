@@ -9,7 +9,6 @@ import { FormControl, Validators } from "@angular/forms";
 
 export class SendFeedbackDialog implements OnInit {
   feedback: any;
-  spinner: boolean;
   constructor(public dialogRef: MdDialogRef<SendFeedbackDialog>){}
   feedbackControl = new FormControl('', [Validators.minLength(5), Validators.maxLength(200), Validators.required]);
   /**
@@ -24,9 +23,5 @@ export class SendFeedbackDialog implements OnInit {
   ngOnInit() {
     this.feedback = this.dialogRef.componentInstance.feedback;
     console.debug('Feedback: '+JSON.stringify(this.feedback));
-    this.spinner = true;
-    setTimeout(() => {
-      this.spinner = false;
-    }, 2000)
   }
 }

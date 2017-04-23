@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './partials/page-not-found.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // App components
@@ -21,7 +22,9 @@ export const routes: Routes = [
     {path: 'swift', component: ProjectSwiftComponent},
     {path: 'mod', component: ProjectFirstModComponent}
   ]},
-  { path: 'about', component: AboutComponent}
+  { path: 'about', component: AboutComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

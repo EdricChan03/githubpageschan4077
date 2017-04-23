@@ -39,16 +39,23 @@
                 <md-icon svgIcon="settings" class="menu-icon"></md-icon>
                 <span>Settings</span>
             </button>
+            <button md-menu-item (click)="openExperiments()">
+                <md-icon svgIcon="flask" class="menu-icon"></md-icon>
+                <span>Experiments</span>
+            </button>
             <button md-menu-item (click)="sendFeedback()">
                 <md-icon svgIcon="message-alert" class="menu-icon"></md-icon>
                 <span>Send Feedback</span>
             </button>
         </md-menu>
     </md-toolbar>
-    <div id="content">
+    <div id="content" (scroll)="onScroll($event)">
         <router-outlet></router-outlet>
     </div>
 </md-sidenav-container>
-<span class="app-action">
-        <button md-fab (click)="scrollToTop()" mdTooltip="Scroll to top" mdTooltipPosition="above" color="primary"><md-icon svgIcon="chevron-up"></md-icon></button>
+<span class="app-action" *ngIf="shareDialog" id="share-dialog-btn">
+    <button md-fab (click)="share()" mdTooltip="Share" mdTooltipPosition="left"><md-icon svgIcon="share"></md-icon></button>
+</span>
+<span class="app-action" *ngIf="showScrollToTop" id="scroll-to-top-btn">
+        <button md-fab (click)="scrollToTop()" mdTooltip="Scroll to top" mdTooltipPosition="left" color="primary"><md-icon svgIcon="chevron-up"></md-icon></button>
 </span>

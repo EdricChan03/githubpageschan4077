@@ -1,22 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* Font family for Roboto */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* This will styles all elements */
 * {
+    /* The outline around any element */
     outline: none;
+    /* Sets all elements to have Roboto and sans-serif as a fallback font */
+    font-family: Roboto, sans-serif;
 }
+/*
+Styles `.hidden` to be not visible
+*/
 .hidden {
     visibility: hidden;
 }
+/*
+Styles the <svg> element to use the Material Icon size of 24x24 pixels
+*/
 svg {
     height: 24px;
     width: 24px;
 }
+/*
+Styles the following:
+<element class="flex"></element>
+<element flex></element>
+*/
 .flex, [flex] {
     flex: 1 1 auto;
 }
 .menu-icon {
     padding-bottom: 12px;
 }
-/* Progress spinner */
+/*
+Progress spinner
+Based on Google Newsstand startup
+*/
 .is-loading {
     position: absolute;
     top: 0;
@@ -34,6 +54,9 @@ svg {
     justify-content: center;
     text-align: center;
 }
+/*
+More styles for progress spinner
+*/
 .loading-indicator {
     width: 50px !important;
     height: 50px !important;
@@ -49,19 +72,49 @@ svg {
 .full-width {
     width: 100%;
 }
+/*
+Styles for about.component.html
+*/
+.about-paragraph {
+    text-indent: 40px;
+}
+.about-list {
+    list-style-position: inside;
+}
+.mobile-toc {
+    margin: 0;
+    width: 100%;
+}
+.desktop-toc {
+
+}
+/*
+Sets button text to be in caps (Based on the Material Guidelines)
+Buttons with class `.no-caps` won't be in caps
+*/
 button[md-button]:not(.no-caps), button[md-raised-button]:not(.no-caps) {
     text-transform: uppercase;
-}
-.active-link {
-    background-color: #f44336;
 }
 img {
     width: 100%;
 }
-.fixed-toolbar {
+md-tab-header {
     position: -webkit-sticky;
     position: sticky;
     top: -1px;
+}
+/*
+Sets the toolbar on top to be fixed
+Note that this relies on position: sticky; which is experimental.
+Status on browsers supported: https://caniuse.com/#feat=css-sticky
+As of now, IE and Edge don't support this feature
+TODO: Add javascript to fix toolbar to top on browsers which have no support for position: sticky;
+*/
+.fixed-toolbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    display: block;
 }
 .app-action {
   display: inline-block;
@@ -71,4 +124,31 @@ img {
 }
 .project-content, .padding-content {
     padding: 10px;
+}
+/*
+Badges for beta, stable and so on
+CSS from https://angular.io
+*/
+.badge {
+    background: #fff;
+    border: 2px solid #607D8B;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+    color: #607D8B;
+    display: inline-block;
+    font-size: 11px;
+    height: 24px;
+    line-height: 22px;
+    margin: 12px 8px 12px 0;
+    padding: 0 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.badge.beta {
+    border-color: #8E24AA;
+    color: #8E24AA;
+}
+.badge.beta:before {
+    content: "beta";
 }

@@ -1,12 +1,13 @@
 <h2 md-dialog-title>Preferences</h2>
 <md-dialog-content>
     <form #settingsForm="ngForm">
-    <md-tab-group>
+    <md-tab-group dynamicHeight>
         <md-tab label="General">
             <h2>General Preferences</h2>
             <section class="section">
             <md-checkbox [(ngModel)]="settings.isDarkTheme" class="checkbox" name="isDarkTheme">Enable Dark Mode</md-checkbox>
             <md-checkbox [(ngModel)]="settings.openNewTab" color="primary" class="checkbox" name="openNewTab">Open links in a new tab</md-checkbox>
+            <md-checkbox [(ngModel)]="settings.showScrollToTop" color="warn" class="checkbox" name="showScrollToTop">Show <code>Scroll To Top button</code></md-checkbox>
             </section>
         </md-tab>
         <md-tab label="Experimental">
@@ -15,13 +16,18 @@
             <md-input-container class="full-width">
                 <input mdInput placeholder="Duration of toasts in milliseconds" value="1000" [(ngModel)]="settings.durationToasts" name="durationToasts">
             </md-input-container>
+            <md-select [(ngModel)]="settings.customTheme" placeholder="Select theme" name="customTheme" required color="primary">
+                <md-option *ngFor="let theme of themes" [value]="theme.value">
+                    {{theme.displayText}}
+                </md-option>
+            </md-select>
             </section>
         </md-tab>
     </md-tab-group>
     </form>
     <p class="note">Please refresh your page to apply changes.</p>
 </md-dialog-content>
-<md-dialog-actions>
+<md-dialog-actions align="end">
     <button md-button color="warn" (click)="clearSettings(); dialogRef.close('clear')">Clear Settings</button>
     <span flex></span>
     <button md-button color="primary" (click)="dialogRef.close('cancel')">Cancel</button>

@@ -1,0 +1,28 @@
+<h2 md-dialog-title>Share <span class="badge beta"></span></h2>
+<md-dialog-content>
+    <!--<md-list>
+        <md-list-item *ngFor="let shareBtn of shareBtns">
+            <md-icon md-list-icon svgIcon="{{shareBtn.icon}}" color="accent"></md-icon>
+            <h3 md-line>{{shareBtn.name}}</h3>
+        </md-list-item>
+    </md-list>-->
+    <form #shareForm="ngForm">
+        <section class="section">
+            <md-select placeholder="Choose social media" (ngModel)="socialMedia.name" name="socialMediaType" required>
+                <md-option *ngFor="let shareBtn of shareBtns" [value]="shareBtn.name" (click)="update(shareBtn)">
+                    {{shareBtn.name}}
+                </md-option>
+            </md-select>
+            <md-input-container class="full-width" mdTooltip="This is readonly and cannot be edited" mdTooltipPosition="right">
+                <input readonly [ngModel]="socialMedia.name" mdInput placeholder="Name of social media" name="socialMediaType">
+            </md-input-container>
+            <md-input-container class="full-width">
+                <textarea [(ngModel)]="socialMedia.text" mdInput placeholder="Text of post" rows="2" cols="100" name="socialMediaText"></textarea>
+            </md-input-container>
+        </section>
+        <p class="important note">Please allow popups to continue.</p>
+    </form>
+</md-dialog-content>
+<md-dialog-actions align="end">
+    <button md-button color="primary" (click)="shareBtnClick(socialMedia)" [disabled]="!shareForm.form.valid">Share</button>
+</md-dialog-actions>
