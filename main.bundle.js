@@ -184,7 +184,7 @@ var AppComponent = (function () {
         this.experiments = JSON.parse(localStorage.getItem('experiments'));
         // Theming
         var htmlEl = document.getElementById('root');
-        htmlEl.className = this.settings.customTheme;
+        htmlEl.className = this.settings.customTheme || 'indigo-pink';
         this.overlayContainer.themeClass = this.settings.customTheme;
         if (this.settings.showScrollToTop) {
             // Shows the scroll to top button if user checked the checkbox in the SettingsDialog
@@ -198,7 +198,7 @@ var AppComponent = (function () {
     AppComponent.prototype.ngAfterViewChecked = function () {
         var _this = this;
         this.scrollToTopBtn = document.getElementById('scroll-to-top-btn');
-        if (this.experiments.shareDialog) {
+        if (this.experiments.shareDialog || false) {
             // Shows the share dialog button
             setTimeout(function () {
                 var cssString = "bottom: 95px; z-index: 1;";
