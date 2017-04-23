@@ -77,6 +77,7 @@ var AppComponent = (function () {
         this.router = router;
         this.cdr = cdr;
         this.overlayContainer = overlayContainer;
+        this.shareDialog = false;
         this.showScrollToTop = false;
         this.title = 'app works!';
         this.links = [
@@ -198,7 +199,7 @@ var AppComponent = (function () {
     AppComponent.prototype.ngAfterViewChecked = function () {
         var _this = this;
         this.scrollToTopBtn = document.getElementById('scroll-to-top-btn');
-        if (this.experiments.shareDialog || false) {
+        if (this.experiments.shareDialog) {
             // Shows the share dialog button
             setTimeout(function () {
                 var cssString = "bottom: 95px; z-index: 1;";
