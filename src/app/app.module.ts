@@ -1,4 +1,4 @@
-import { TOCComponent } from './partials/toc.directive';
+import { TOCComponent, TOCDirective } from './partials/toc.directive';
 import { MdIconRegistry, OverlayContainer } from '@angular/material';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -45,7 +45,9 @@ import { UrlDialogService } from './services/urldialog.service';
     SettingsDialog,
     UrlDialog,
     ShareDialog,
-    ExperimentsDialog
+    ExperimentsDialog,
+    // App directives
+    TOCDirective
   ],
   imports: [
     BrowserModule,
