@@ -25,8 +25,10 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
       }, 2000);
     })
   }
+  defaultSettings: any;
+  defaultExperiments: any;
   debugMode: boolean;
-  shareDialog: boolean;
+  shareDialog: boolean=false;
   experiments: any;
   showScrollToTop: boolean = false;
   settings: any;
@@ -112,33 +114,44 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
     document.getElementById('content').scrollIntoView();
   }
   ngAfterViewInit() {
+    this.defaultSettings = {"customTheme": "indigo-pink", "durationToast": 1000, "openNewTab":false, "showScrollToTop":false};
+    this.defaultExperiments = {"shareDialog":true};
     // Sets settings to either parsed JSON of localStorage `settings`
     this.debugMode = JSON.parse(localStorage.getItem('debugMode'));
-    this.settings = JSON.parse(localStorage.getItem('settings'));
-    this.experiments = JSON.parse(localStorage.getItem('experiments'));
+    this.settings = JSON.parse(localStorage.getItem('settings')) || this.defaultSettings;
+    this.experiments = JSON.parse(localStorage.getItem('experiments')) || this.defaultExperiments;
 
     // Theming
     var htmlEl = document.getElementById('root');
+    if (this.settings.customTheme) {
     htmlEl.className = this.settings.customTheme;
     this.overlayContainer.themeClass = this.settings.customTheme;
+    } else {
+    htmlEl.className = 'indigo-pink';
+    this.overlayContainer.themeClass = 'indigo-pink';
+    }
 
-    if (this.settings.showScrollToTop) {
+    if (this.settings.showScrollToTop || false) {
       // Shows the scroll to top button if user checked the checkbox in the SettingsDialog
       this.showScrollToTop = true;
     } else {
       this.showScrollToTop = false;
     }
-    console.debug(JSON.stringify('Settings: ' + this.settings));
+    console.dir('Settings: ' + JSON.stringify(this.settings));
   }
   ngAfterViewChecked() {
     this.scrollToTopBtn = document.getElementById('scroll-to-top-btn');
-    if (this.experiments.shareDialog) {
+    if (this.experiments.shareDialog || false) {
+      if (this.settings.showScrollToTop) {
       // Shows the share dialog button
       setTimeout(() => {
         var cssString = "bottom: 95px; z-index: 1;";
         this.scrollToTopBtn.style.cssText = cssString;
-        this.shareDialog = true;
       }, 2000)
+      } else {
+        console.info('Scroll to top not enabled.');
+      }
+        this.shareDialog = true;
     } else {
       // Set styles for second button
       // var cssString = "";

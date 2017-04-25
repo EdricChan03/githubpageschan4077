@@ -81,11 +81,7 @@ Styles for about.component.html
 .about-list {
     list-style-position: inside;
 }
-.mobile-toc {
-    margin: 0;
-    width: 100%;
-}
-.desktop-toc {
+.toc {
 
 }
 /*
@@ -98,10 +94,18 @@ button[md-button]:not(.no-caps), button[md-raised-button]:not(.no-caps) {
 img {
     width: 100%;
 }
-md-tab-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
+/*
+Styles for about page
+*/
+.about-header {
+    display: inline-block;
+    padding: 8px;;
+}
+/*
+This will style all children, grandchildren, etc. in `.about-header`
+*/
+.about-header * {
+    display: inherit !important;
 }
 /*
 Sets the toolbar on top to be fixed

@@ -17,25 +17,25 @@ View [package.json](/package.json) for more information.
 
 | Dependency name                     | Dependency version              | NPM          | Repo            |
 |-------------------------------------|---------------------------------|--------------|-----------------|
-| `@angular/animations`               | 4.0.2                           | [npm][npm1]  | [Github][git1]  |
-| `@angular/common`                   | 4.0.2                           | [npm][npm2]  | [Github][git2]  |
-| `@angular/compiler`                 | 4.0.2                           | [npm][npm3]  | [Github][git3]  |
-| `@angular/compiler-cli`             | 4.0.2                           | [npm][npm4]  | [Github][git4]  |
-| `@angular/core`                     | 4.0.2                           | [npm][npm5]  | [Github][git5]  |
+| `@angular/animations`               | 4.0.3                           | [npm][npm1]  | [Github][git1]  |
+| `@angular/common`                   | 4.0.3                           | [npm][npm2]  | [Github][git2]  |
+| `@angular/compiler`                 | 4.0.3                           | [npm][npm3]  | [Github][git3]  |
+| `@angular/compiler-cli`             | 4.0.3                           | [npm][npm4]  | [Github][git4]  |
+| `@angular/core`                     | 4.0.3                           | [npm][npm5]  | [Github][git5]  |
 | `@angular/flex-layout`               | 2.0.0-beta.8                    | [npm][npm36] | [Github][git36] |
-| `@angular/forms`                    | 4.0.2                           | [npm][npm6]  | [Github][git6]  |
-| `@angular/http`                     | 4.0.2                           | [npm][npm7]  | [Github][git7]  |
+| `@angular/forms`                    | 4.0.3                           | [npm][npm6]  | [Github][git6]  |
+| `@angular/http`                     | 4.0.3                           | [npm][npm7]  | [Github][git7]  |
 | `@angular/material`                 | [master][master] (2.0.0-beta.3) | [npm][npm8]  | [Github][git8]  |
-| `@angular/platform-browser`         | 4.0.2                           | [npm][npm9]  | [Github][git9]  |
-| `@angular/platform-browser-dynamic` | 4.0.2                           | [npm][npm10] | [Github][git10] |
-| `@angular/platform-server`          | 4.0.2                           | [npm][npm11] | [Github][git11] |
-| `@angular/router`                   | 4.0.2                           | [npm][npm12] | [Github][git12] |
+| `@angular/platform-browser`         | 4.0.3                           | [npm][npm9]  | [Github][git9]  |
+| `@angular/platform-browser-dynamic` | 4.0.3                           | [npm][npm10] | [Github][git10] |
+| `@angular/platform-server`          | 4.0.3                           | [npm][npm11] | [Github][git11] |
+| `@angular/router`                   | 4.0.3                           | [npm][npm12] | [Github][git12] |
 | `angular2-highlight-js`             | 5.0.0                           | [npm][npm13] | [Github][git13] |
 | `core-js`                           | 5.0.0                           | [npm][npm14] | [Github][git14] |
 | `hammerjs`                          | 2.0.8                           | [npm][npm15] | [Github][git15] |
 | `rxjs`                              | 5.2.1-smooth                    | [npm][npm16] | [Github][git16] |
 | `ts-helpers`                        | 1.1.2                           | [npm][npm17] | [Github][git17] |
-| `typescript`                        | 2.2.2                           | [npm][npm18] | [Github][git18] |
+| `typescript`                        | 2.3.0                           | [npm][npm18] | [Github][git18] |
 | `typings`                           | 2.1.0                           | [npm][npm29] | [Github][git19] |
 | `zone.js`                           | 0.8.5                           | [npm][npm20] | [Github][git20] |
 
@@ -93,7 +93,7 @@ View [package.json](/package.json) for more information.
 | Dependency name                     | Dependency version              | NPM          | Repo            |
 |-------------------------------------|---------------------------------|--------------|-----------------|
 | `@angular/cli`                      | 1.0.0                           | [npm][npm21] | [Github][git21] |
-| `@angular/compiler-cli`             | 4.0.1                           | [npm][npm22] | [Github][git22] |
+| `@angular/compiler-cli`             | 4.0.3                           | [npm][npm22] | [Github][git22] |
 | `@types/hammerjs`                   | 2.0.34                          | [npm][npm23] | [Github][git23] |
 | `@types/jasmine`                    | 2.5.47                          | [npm][npm24] | [Github][git24] |
 | `codelyzer`                         | 3.0.0-beta.4                    | [npm][npm25] | [Github][git25] |

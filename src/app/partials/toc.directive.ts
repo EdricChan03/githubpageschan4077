@@ -1,4 +1,4 @@
-import { Directive, Component, ViewEncapsulation, ChangeDetectionStrategy, Input, OnInit, Renderer, ElementRef } from "@angular/core";
+import { Directive, Component, ViewEncapsulation, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
 import { RouterLinkActive } from "@angular/router";
 
 // TODO: Add it as an attirubte to HTML5 elements
@@ -22,16 +22,6 @@ export class TOCDirective {}
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TOCComponent implements OnInit {
-    constructor(public renderer: Renderer, public el: ElementRef){
-        // If screen's width is less than 
-        if (screen.width <= 991) {
-        renderer.setElementClass(el.nativeElement, 'mobile-toc', true);
-
-        } else {
-        renderer.setElementClass(el.nativeElement, 'desktop-toc', true);
-
-        }
-    }
     links: any = [];
     goTo(hashLink) {
         window.location.hash = hashLink;
