@@ -145,11 +145,11 @@ View [package.json](/package.json) for more information.
 ## Building the source code
 If you want to build the source code, follow these steps:
 
-1. Clone or download to your desktop using the button Clone or download or use `git clone https://github.com/Chan4077/chan4077.github.io.git`.
+1. Clone or download to your desktop using the button Clone or download or use `git clone https://github.com/Chan4077/githubpageschan4077.git`.
 2. Run the following:
 
      ```bash
-     cd path/to/chan4077.github.io # Replace with your actual path
+     cd path/to/githubpageschan4077 # Replace with your actual path
      npm install        # Used to install the dependencies
      ng serve           # Serve using the @angular/cli 
      ```
@@ -160,8 +160,9 @@ If you want to build the source code, follow these steps:
 Done!
 
 ## The old website
-If you would still like to view the old repo, view [here][old_repo].
+~~If you would still like to view the old repo, view [here][old_repo].~~
 
-_RIP: version 1 (2016-2017). We miss you dearly. :cry:_
+~~_RIP: version 1 (2016-2017). We miss you dearly. :cry:_~~
 
-[old_repo]: https://github.com/Chan4077/chan4077.github.io_old
+> UPDATE: Guess what? The repo is back up. For more information, view the description of [chan4077.github.io][old_repo].
+[old_repo]: https://github.com/Chan4077/chan4077.github.io
