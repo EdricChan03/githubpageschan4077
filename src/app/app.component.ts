@@ -6,7 +6,9 @@ import { SettingsDialog } from './dialogs/settingsdialog.component';
 import { ShareDialog } from './dialogs/sharedialog.component';
 import { ExperimentsDialog } from './dialogs/experimentsdialog.component';
 import { UrlDialogService } from './services/urldialog.service';
+declare let window: Window;
 declare let ga: Function;
+declare let updateConnectionStatus: Function;
 
 @Component({
   selector: 'app-root',
@@ -28,7 +30,7 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
   defaultSettings: any;
   defaultExperiments: any;
   debugMode: boolean;
-  shareDialog: boolean=false;
+  shareDialog: boolean = false;
   experiments: any;
   showScrollToTop: boolean = false;
   settings: any;
@@ -63,6 +65,10 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
       } else if (result == 'clear') {
         // Do nothing as it is already handled in settingsdialog.component.ts under `clearSettings()`
         console.log('Settings cleared!');
+        this.snackbar.open('Settings cleared! Reloading in 3 seconds...', null, {duration: 3000});
+        setTimeout(()=> {
+          window.location.reload(true);
+        }, 3000)
       }
     })
   }
@@ -113,22 +119,38 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
     console.log('Scrolling to top...');
     document.getElementById('content').scrollIntoView();
   }
+  /**
+ * Updates the connection status
+ * @description Shows a snackbar stating that user is online/offline
+ * @param isOnline {boolean} If online
+ * @author Edric Chan
+ * @version 1.0.2
+ */
+  updateConnectionStatus(isOnline: boolean): void {
+    if (navigator.onLine && isOnline) {
+      console.log('Connection is online');
+      this.snackbar.open('Connection is online!', null, { 'duration': 5000 });
+    } else {
+      console.log('Connection is offline');
+      this.snackbar.open('Connection is offline!', null, { 'duration': 5000 });
+    }
+  }
+
   ngAfterViewInit() {
-    this.defaultSettings = {"customTheme": "indigo-pink", "durationToast": 1000, "openNewTab":false, "showScrollToTop":false};
-    this.defaultExperiments = {"shareDialog":true};
+    this.defaultSettings = { "customTheme": "indigo-pink", "durationToast": 1000, "openNewTab": false, "showScrollToTop": false };
+    this.defaultExperiments = { "shareDialog": true };
     // Sets settings to either parsed JSON of localStorage `settings`
     this.debugMode = JSON.parse(localStorage.getItem('debugMode'));
     this.settings = JSON.parse(localStorage.getItem('settings')) || this.defaultSettings;
     this.experiments = JSON.parse(localStorage.getItem('experiments')) || this.defaultExperiments;
-
     // Theming
     var htmlEl = document.getElementById('root');
     if (this.settings.customTheme) {
-    htmlEl.className = this.settings.customTheme;
-    this.overlayContainer.themeClass = this.settings.customTheme;
+      htmlEl.className = this.settings.customTheme;
+      this.overlayContainer.themeClass = this.settings.customTheme;
     } else {
-    htmlEl.className = 'indigo-pink';
-    this.overlayContainer.themeClass = 'indigo-pink';
+      htmlEl.className = 'indigo-pink';
+      this.overlayContainer.themeClass = 'indigo-pink';
     }
 
     if (this.settings.showScrollToTop || false) {
@@ -138,27 +160,34 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
       this.showScrollToTop = false;
     }
     console.dir('Settings: ' + JSON.stringify(this.settings));
+    window.addEventListener("load", () => {
+      console.log('Loaded!');
+
+    })
+    window.addEventListener("online", () => {
+      this.updateConnectionStatus(true);
+    }, false);
+    window.addEventListener("offline", () => {
+      this.updateConnectionStatus(false);
+    }, false);
+    
+    var els = document.querySelectorAll('code');
+    for (var i = 0; i < els.length; i++) () => {
+      els[i].setAttribute("highlight", null);
+    }
   }
   ngAfterViewChecked() {
     this.scrollToTopBtn = document.getElementById('scroll-to-top-btn');
     if (this.experiments.shareDialog || false) {
       if (this.settings.showScrollToTop) {
-      // Shows the share dialog button
-      setTimeout(() => {
-        var cssString = "bottom: 95px; z-index: 1;";
-        this.scrollToTopBtn.style.cssText = cssString;
-      }, 2000)
+        // Shows the share dialog button
+        setTimeout(() => {
+          var cssString = "bottom: 95px; z-index: 1;";
+          this.scrollToTopBtn.style.cssText = cssString;
+        }, 2000)
       } else {
-        console.info('Scroll to top not enabled.');
       }
-        this.shareDialog = true;
-    } else {
-      // Set styles for second button
-      // var cssString = "";
-      // scrollToTopBtn.style.cssText = cssString;
-      // Don't show the share dialog button
-      this.shareDialog = false;
-
+      this.shareDialog = true;
     }
     this.cdr.detectChanges();
   }

@@ -1,3 +1,9 @@
+import { ProjectScriptsForMacComponent } from './partials/projects/scriptsformac.component';
+import { ProjectMdTodoComponent } from './partials/projects/mdtodo.component';
+import { ProjectSwiftComponent } from './partials/projects/swiftapp.component';
+import { ProjectMarketComponent } from './partials/projects/market.component';
+import { ProjectFirstModComponent } from './partials/projects/firstmod.component';
+import { ProjectsComponent, WarningsDialog } from './partials/projects.component';
 import { TOCComponent, TOCDirective } from './partials/toc.directive';
 import { MdIconRegistry, OverlayContainer } from '@angular/material';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
@@ -8,7 +14,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { MarkdownModule } from "angular2-markdown";
 import { FlexLayoutModule } from "@angular/flex-layout";
-// Modules for Material
+// Modules
 import { Chan4077GithubIoMaterialModule } from "./chan4077.github.io.module";
 // App routing
 import { routing } from "./app.routing";
@@ -17,10 +23,6 @@ import { AboutComponent } from './partials/about.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './partials/home.component';
 import { PageNotFoundComponent } from './partials/page-not-found.component';
-// App components -> Projects
-import { ProjectSwiftComponent } from './partials/projects/swiftapp.component';
-import { ProjectsComponent } from './partials/projects.component';
-import { ProjectFirstModComponent } from './partials/projects/firstmod.component';
 // App dialogs
 import { SendFeedbackDialog } from "./dialogs/sendfeedback.component";
 import { SettingsDialog } from './dialogs/settingsdialog.component';
@@ -37,8 +39,11 @@ import { UrlDialogService } from './services/urldialog.service';
     PageNotFoundComponent,
     // App projects
     ProjectsComponent,
-    ProjectSwiftComponent,
     ProjectFirstModComponent,
+    ProjectMarketComponent,
+    ProjectMdTodoComponent,
+    ProjectScriptsForMacComponent,
+    ProjectSwiftComponent,
     TOCComponent,
     // App dialogs
     SendFeedbackDialog,
@@ -46,6 +51,7 @@ import { UrlDialogService } from './services/urldialog.service';
     UrlDialog,
     ShareDialog,
     ExperimentsDialog,
+    WarningsDialog,
     // App directives
     TOCDirective
   ],
@@ -61,7 +67,7 @@ import { UrlDialogService } from './services/urldialog.service';
     FlexLayoutModule
   ],
   providers: [
-    UrlDialogService,
+    UrlDialogService
   ],
   bootstrap: [
     AppComponent
@@ -71,7 +77,8 @@ import { UrlDialogService } from './services/urldialog.service';
     SettingsDialog,
     UrlDialog,
     ShareDialog,
-    ExperimentsDialog
+    ExperimentsDialog,
+    WarningsDialog
   ]
 })
 export class AppModule {

@@ -14,7 +14,7 @@ export class ShareDialog {
      * The share button which is clicked
      */
     shareBtnSelected: any = {"name": "", "url": "", "icon": ""};
-    socialMedia: any = {"name": "", "url": "", "icon": ""};
+    socialMedia: any = {"name": "", "url": "", "icon": "", "showMore":true};
     socialMediaType: string;
     shareBtnClick(socialMedia) {
         console.log('Parm sharedBtn passed in as: '+JSON.stringify(socialMedia));

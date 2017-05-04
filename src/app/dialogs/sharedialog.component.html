@@ -13,9 +13,12 @@
                     {{shareBtn.name}}
                 </md-option>
             </md-select>
+            <md-checkbox [(ngModel)]="showMore" [ngModelOptions]="{standalone:true}">Show more info</md-checkbox>
+            <div [hidden]="!showMore" class="moreinfo">
             <md-input-container class="full-width" mdTooltip="This is readonly and cannot be edited" mdTooltipPosition="right">
                 <input readonly [ngModel]="socialMedia.name" mdInput placeholder="Name of social media" name="socialMediaType">
             </md-input-container>
+            </div>
             <md-input-container class="full-width">
                 <textarea [(ngModel)]="socialMedia.text" mdInput placeholder="Text of post" rows="2" cols="100" name="socialMediaText"></textarea>
             </md-input-container>

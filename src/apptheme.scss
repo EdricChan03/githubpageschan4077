@@ -34,6 +34,7 @@
     
     .active-link {
         background-color: mat-color($primary);
+        color: white !important;
     }
     .sticky-header {
         position: -webkit-sticky;

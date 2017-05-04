@@ -1,12 +1,15 @@
 import { Directive, Component, ViewEncapsulation, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
 import { RouterLinkActive } from "@angular/router";
 
-// TODO: Add it as an attirubte to HTML5 elements
-
+/*
+TODO: Add it as an attirubte to HTML5 elements
+Also add some options
+*/
 @Directive({
     selector: 'toc, table-of-contents'
 })
-export class TOCDirective {}
+export class TOCDirective {
+}
 
 /**
  * Table of contents

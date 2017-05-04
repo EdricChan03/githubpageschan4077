@@ -3,7 +3,7 @@
         (click)="selected(project)">
         <md-icon md-list-icon svgIcon="{{project.icon}}" *ngIf="project.hasIcon"></md-icon>
         <h3 md-line>{{project.name}}</h3>
-        <p *ngIf="project.hasDesc" md-line>{{project.desc}}</p>
+        <p *ngIf="project.hasDesc" md-line [innerHTML]="project.desc"></p>
     </a>
 </md-nav-list>
 <section>
@@ -13,6 +13,9 @@
         </button>
         <h4>{{projectSelected.name}}</h4>
         <span flex></span>
+        <button md-icon-button mdTooltip="View Warnings" (click)="viewWarnings()">
+            <md-icon svgIcon="alert"></md-icon>
+        </button>
         <button md-icon-button mdTooltip="View Readme on Github" (click)="goToGithub(projectSelected.readmeUrl)">
             <md-icon svgIcon="book-open-variant"></md-icon>
         </button>

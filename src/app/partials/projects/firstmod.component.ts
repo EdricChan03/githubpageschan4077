@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Observable";
 
 @Component({
     selector: 'project-firstmod',
-    templateUrl: './firstmod.component.html'
+    template: '<markdown path="https://raw.githubusercontent.com/Chan4077/First-Mod/master/README.md"></markdown>'
 })
 export class ProjectFirstModComponent {
 }
