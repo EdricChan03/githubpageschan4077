@@ -50,7 +50,7 @@ For those who would like to contribute, please send me a DM _(Direct Message)_ a
 
 [old_repo]: https://github.com/Chan4077/chan4077.github.io
 
-## License
+## License & Credits
 Licensed with `MIT`.
 
 [View license](/LICENSE)
