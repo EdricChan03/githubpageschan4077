@@ -5,7 +5,7 @@
 - [Building the source code](#building-the-source-code)
 - [Contributing](#contributing)
 - [The old website](#the-old-website)
-- [License & Credits](#license)
+- [License & Credits](#license--credits)
 
 ---
 
@@ -24,7 +24,8 @@ View [package.json](/package.json) for more information.
 ## Building the source code
 If you want to build the source code, follow these steps:
 
-1. Clone or download to your desktop using the button Clone or download or use `git clone https://github.com/Chan4077/githubpageschan4077.git`.
+1. Clone or download to your desktop using the button Clone or download or use
+`git clone https://github.com/Chan4077/githubpageschan4077.git`.
 2. Run the following:
 
      ```bash
@@ -32,8 +33,6 @@ If you want to build the source code, follow these steps:
      npm install        # Used to install the dependencies
      ng serve           # Serve using the @angular/cli v1.0.2
      ```
-     
-     > NOTE: If you don't have `@angular/cli`, please view the [wiki](https://github.com/angular/angular-cli/wiki) to install it
      
 3. Navigate to `localhost:4200` on your browser and you should see the code there.
 Done!
@@ -51,6 +50,7 @@ For those who would like to contribute, please send me a DM _(Direct Message)_ a
 [old_repo]: https://github.com/Chan4077/chan4077.github.io
 
 ## License & Credits
-Licensed with `MIT`.
+- Licensed with `MIT`.
+- [View license](/LICENSE)
 
-[View license](/LICENSE)
+Thanks to all those demos online for helping me! :tada: :smile:
