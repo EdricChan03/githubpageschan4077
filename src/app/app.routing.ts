@@ -1,3 +1,4 @@
+import { ProjectMarketComponent } from './partials/projects/market.component';
 import { ProjectScriptsForMacComponent } from './partials/projects/scriptsformac.component';
 import { ProjectMdTodoComponent } from './partials/projects/mdtodo.component';
 import { PageNotFoundComponent } from './partials/page-not-found.component';
@@ -24,7 +25,8 @@ export const routes: Routes = [
     {path: 'swift', component: ProjectSwiftComponent},
     {path: 'mod', component: ProjectFirstModComponent},
     {path: 'md-todo', component: ProjectMdTodoComponent},
-    {path: 'scripts-for-mac', component: ProjectScriptsForMacComponent}
+    {path: 'scripts-for-mac', component: ProjectScriptsForMacComponent},
+    {path: 'market2', component: ProjectMarketComponent}
   ]},
   { path: 'about', component: AboutComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},

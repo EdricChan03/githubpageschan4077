@@ -9,7 +9,7 @@ export class UrlDialog implements OnInit {
     settings: any;
     isDarkTheme: boolean;
     url: string;
-    dontShowAgain: boolean;
+    openNewTab: boolean;
     constructor(public dialogRef: MdDialogRef<UrlDialog>) {}
 
     ngOnInit() {

@@ -126,6 +126,9 @@ TODO: Add javascript to fix toolbar to top on browsers which have no support for
   bottom: 20px;
   right: 20px;
 }
+.bold {
+    font-weight: bold;
+}
 .project-content, .padding-content {
     padding: 10px;
 }

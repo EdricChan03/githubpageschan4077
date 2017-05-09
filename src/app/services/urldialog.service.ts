@@ -12,8 +12,8 @@ export class UrlDialogService {
      * Goes to a url
      * @version 1.0.0
      * @author Edric Chan
-     * @param {url:string} The url to go to
-     * @returns null
+     * @param {string} url (required) The URL to go to
+     * @return null
      */
     public goToUrl(url: string): void {
         console.debug('URL is: ' + url);

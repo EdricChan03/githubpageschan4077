@@ -60,6 +60,17 @@ export class ProjectsComponent implements OnInit {
             desc: 'Scripts for mac',
             githubUrl: 'https://github.com/Chan4077/scripts-for-mac',
             readmeUrl: 'https://github.com/Chan4077/scripts-for-mac/blob/master/README.md'
+        },
+        {
+            href: '/market2',
+            hasIcon: true,
+            icon: 'cart',
+            name: 'Market2',
+            hasVer: false,
+            hasDesc: true,
+            desc: 'Market 2 (Angular Material 2 and Angular 4) <a href="https://market2-ed1e4.firebaseapp.com">Link</a>',
+            githuUrl: 'https://github.com/Chan4077/market2',
+            readmeUrl: 'https://github.com/Chan4077/market2/blob/master/README.md'
         }
     ]
     viewWarnings() {
