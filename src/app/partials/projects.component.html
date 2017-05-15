@@ -3,7 +3,7 @@
         (click)="selected(project)">
         <md-icon md-list-icon svgIcon="{{project.icon}}" *ngIf="project.hasIcon"></md-icon>
         <h3 md-line>{{project.name}}</h3>
-        <p *ngIf="project.hasDesc" md-line [innerHTML]="project.desc"></p>
+        <p *ngIf="project.hasDesc" md-line [innerHTML]="project.desc | safeHtml"></p>
     </a>
 </md-nav-list>
 <section>

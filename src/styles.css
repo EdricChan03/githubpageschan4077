@@ -133,6 +133,12 @@ TODO: Add javascript to fix toolbar to top on browsers which have no support for
     padding: 10px;
 }
 /*
+For listing in `projects
+*/
+.link-overwrite {
+    text-decoration: underline !important;
+}
+/*
 Badges for beta, stable and so on
 CSS from https://angular.io
 */

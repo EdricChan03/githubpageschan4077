@@ -45,6 +45,14 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
   onScroll(e) {
     // if ()
   }
+  /**
+   * Opens the settings dialog
+   * @example <caption>Opening the dialog in html</caption>
+   * <code>
+   *  <button md-button (click)="openSettings()">Open Settings</button>
+   * </code>
+   * @return {void}
+   */
   openSettings() {
     let dialogRef = this.dialog.open(SettingsDialog, { disableClose: true });
     dialogRef.afterClosed().subscribe(result => {
@@ -72,6 +80,12 @@ export class AppComponent implements AfterViewInit, AfterViewChecked {
       }
     })
   }
+  /**
+   * Opens the experiment dialog
+   * @example <caption>Opening the dialog in html</caption>
+   * <button md-button (click)="openExperiments">Open Experiment Dialog</button>
+   * @return {void}
+   */
   openExperiments() {
     let dialogRef = this.dialog.open(ExperimentsDialog);
     dialogRef.afterClosed().subscribe(result => {

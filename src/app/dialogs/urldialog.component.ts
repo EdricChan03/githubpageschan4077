@@ -13,7 +13,7 @@ export class UrlDialog implements OnInit {
     constructor(public dialogRef: MdDialogRef<UrlDialog>) {}
 
     ngOnInit() {
-        this.settings = JSON.parse(localStorage.getItem('settings')) || { 'isDarkTheme': true, 'name': 'Lorem ipsum', 'email': 'johnappleseed@gmail.com', 'birthday': '2003-12-23', 'showDeveloper': false };
+        this.settings = JSON.parse(localStorage.getItem('settings')) || { 'isDarkTheme': true, 'showDeveloper': false };
         this.isDarkTheme = this.settings.isDarkTheme;
         this.url = this.dialogRef.componentInstance.url;
     }

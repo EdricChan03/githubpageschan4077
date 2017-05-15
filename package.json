@@ -54,16 +54,16 @@
     "@types/jasmine": "2.5.47",
     "@types/node": "^7.0.13",
     "codelyzer": "~3.0.0",
-    "gh-pages": "^0.12.0",
+    "gh-pages": "^1.0.0",
     "jasmine-core": "2.6.1",
     "jasmine-spec-reporter": "4.1.0",
-    "karma": "1.6.0",
+    "karma": "1.7.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-remap-istanbul": "^0.6.0",
     "protractor": "~5.1.1",
-    "ts-node": "3.0.3",
+    "ts-node": "3.0.4",
     "tslint": "^5.1.0"
   }
 }

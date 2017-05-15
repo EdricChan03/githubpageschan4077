@@ -1,3 +1,5 @@
+import { SafeHtmlPipe } from './partials/safehtml.pipe';
+import { ProjectMaterial2DocsComponent } from './partials/projects/material2-docs.component';
 import { ProjectScriptsForMacComponent } from './partials/projects/scriptsformac.component';
 import { ProjectMdTodoComponent } from './partials/projects/mdtodo.component';
 import { ProjectSwiftComponent } from './partials/projects/swiftapp.component';
@@ -44,6 +46,7 @@ import { UrlDialogService } from './services/urldialog.service';
     ProjectMdTodoComponent,
     ProjectScriptsForMacComponent,
     ProjectSwiftComponent,
+    ProjectMaterial2DocsComponent,
     TOCComponent,
     // App dialogs
     SendFeedbackDialog,
@@ -53,7 +56,9 @@ import { UrlDialogService } from './services/urldialog.service';
     ExperimentsDialog,
     WarningsDialog,
     // App directives
-    TOCDirective
+    TOCDirective,
+    // App pipes
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

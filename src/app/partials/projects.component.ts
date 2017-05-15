@@ -9,6 +9,12 @@ import { UrlDialogService } from './../services/urldialog.service';
 export class ProjectsComponent implements OnInit {
     projectSelected: any;
     constructor(private router: Router, private urlDialogService: UrlDialogService, private dialog: MdDialog) { }
+    /**
+     * All of the projects
+     * @todo Make this dynamic
+     * @version 1.0.1
+     * @type Array
+     */
     projects = [
         {
             href: '/swift',
@@ -39,7 +45,7 @@ export class ProjectsComponent implements OnInit {
         },
         {
             href: '/md-todo',
-            hasIcon: true, 
+            hasIcon: true,
             icon: 'format-list-checks',
             name: 'Md-Todo',
             ver: 'null',
@@ -68,17 +74,45 @@ export class ProjectsComponent implements OnInit {
             name: 'Market2',
             hasVer: false,
             hasDesc: true,
-            desc: 'Market 2 (Angular Material 2 and Angular 4) <a href="https://market2-ed1e4.firebaseapp.com">Link</a>',
-            githuUrl: 'https://github.com/Chan4077/market2',
+            desc: 'Market 2 (Angular Material 2 and Angular 4) <a href="https://market2-ed1e4.firebaseapp.com" class="link-overwrite">Link</a>',
+            githubUrl: 'https://github.com/Chan4077/market2',
             readmeUrl: 'https://github.com/Chan4077/market2/blob/master/README.md'
+        },
+        {
+            href: '/material2-docs',
+            hasIcon: true,
+            icon: 'angular',
+            name: 'Material2 Docs',
+            hasVer: false,
+            hasDesc: true,
+            desc: 'Angular Material 2 Docs. <strong>NOTE:</strong> This is <em>unofficial</em>. Please refer to the <a href="https://material.angular.io" class="link-overwrite">official docs</a> instead.',
+            githubUrl: 'https://github.com/Chan4077/material2-docs',
+            readmeUrl: 'https://github.com/Chan4077/material2-docs/blob/master/README.md'
         }
     ]
+    /**
+     * Opens the warning dialog
+     * @todo Add more content to the dialog
+     * @version 1.0.2
+     * @return {void}
+     */
     viewWarnings() {
         this.dialog.open(WarningsDialog);
     }
+    /**
+     * Goes to the github url specified
+     * @param {string} url The url to go to
+     * @return {void}
+     */
     goToGithub(url) {
         this.urlDialogService.goToUrl(url);
     }
+    /**
+     * Selects the project
+     * @param {any} project The project selected
+     * @todo Remove this
+     * @return {void}
+     */
     selected(project) {
         this.projectSelected = project;
         localStorage.setItem('project-selected', JSON.stringify(this.projectSelected));
@@ -92,17 +126,22 @@ export class ProjectsComponent implements OnInit {
         }
     }
 }
-
+/**
+ * The warning dialog component
+ * @type Component
+ * @version 1.0.2
+ */
 @Component({
     selector: 'warnings-dialog',
-    template:   `<md-icon svgIcon="alert"></md-icon><h2 md-dialog-title>Warnings</h2>
+    template: `<h2 md-dialog-title>Warnings</h2>
                 <md-dialog-content>
                 <ol>
-                <li>Please note that table of contents links in READMEs will not work here. Please view on Github instead.</li>
+                  <li>Please note that table of contents links in READMEs will not work here. Please view on Github instead.</li>
+                  <li>Also note that code will also not be formatted (at least for now), Please view on Github instead.</li>
                 </ol>
                 </md-dialog-content>
                 <md-dialog-actions align="end">
                 <button md-button md-dialog-close color="primary">Close</button>
                 </md-dialog-actions>`
 })
-export class WarningsDialog {}
+export class WarningsDialog { }

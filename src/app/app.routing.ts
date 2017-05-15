@@ -1,3 +1,4 @@
+import { ProjectMaterial2DocsComponent } from './partials/projects/material2-docs.component';
 import { ProjectMarketComponent } from './partials/projects/market.component';
 import { ProjectScriptsForMacComponent } from './partials/projects/scriptsformac.component';
 import { ProjectMdTodoComponent } from './partials/projects/mdtodo.component';
@@ -15,9 +16,18 @@ import { ProjectsComponent } from './partials/projects.component';
  * Routes used for routing the app
  * @version 1.0.2
  * @author Edric Chan
- * @example In your `app.module.ts`, import `routing` into `imports` in `NgModule`
+ * @example <caption>Importing into `app.module.ts`</caption>
+ * // Import into app.module.ts
+ * // app.module.ts
+ * import {routing} from './app.routing';
+ * 
+ * @NgModule({
+ * 	imports: [
+ * 		routing
+ *  ]
+ * })
  * @description Paths to route to with components
- * @type Routes[]
+ * @type {Routes[]}
  */
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,7 +36,8 @@ export const routes: Routes = [
     {path: 'mod', component: ProjectFirstModComponent},
     {path: 'md-todo', component: ProjectMdTodoComponent},
     {path: 'scripts-for-mac', component: ProjectScriptsForMacComponent},
-    {path: 'market2', component: ProjectMarketComponent}
+    {path: 'market2', component: ProjectMarketComponent},
+    {path: 'material2-docs', component: ProjectMaterial2DocsComponent}
   ]},
   { path: 'about', component: AboutComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
