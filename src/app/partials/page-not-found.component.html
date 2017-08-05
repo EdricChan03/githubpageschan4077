@@ -3,7 +3,7 @@
         <button md-icon-button (click)="goBack()" mdTooltip="Go Back">
             <md-icon svgIcon="arrow-left"></md-icon>
         </button>
-        <span flex></span>
+        <span fxFlex></span>
         <button md-icon-button (click)="aboutThis()" mdTooltip="About This Card">
             <md-icon svgIcon="information"></md-icon>
         </button>
@@ -11,7 +11,7 @@
     <md-card-title>Error 404</md-card-title>
     <md-card-content>
         <p>Error 404: URL not found.</p>
-        <p>The site you are accessing - <strong>https://githubpageschan4077.firebaseapp.com/{{router.url}}</strong> is not available.</p>
+        <p>The site you are accessing - <strong>https://githubpageschan4077.firebaseapp.com{{router.url}}</strong> is not available.</p>
         <p>Please contact the admin for more information.</p>
         <br>
         <p>To head back, click <md-icon svgIcon="arrow-left" mdTooltip="Go Back Icon"></md-icon></p>

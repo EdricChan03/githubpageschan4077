@@ -1,0 +1,14 @@
+<md-toolbar color="accent">
+    <button md-icon-button (click)="goBack()">
+        <md-icon svgIcon="arrow-left"></md-icon>
+    </button>
+    {{docTitle}}
+</md-toolbar>
+<div class="archive">
+    <md-expansion-panel #archivePanel>
+        Content
+    </md-expansion-panel>
+</div>
+<div class="blogpost-content">
+    <router-outlet></router-outlet>
+</div>

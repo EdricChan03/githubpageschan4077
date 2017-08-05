@@ -10,8 +10,7 @@
 // NgModule
 import { NgModule } from '@angular/core';
 // MaterialModules to import
-import { MdInputModule, MdDialogModule, MdTooltipModule, MdButtonModule, MdIconModule, MdTabsModule, MdCardModule, OverlayModule, MdProgressSpinnerModule, MdSnackBarModule, MdMenuModule, MdCheckboxModule, MdListModule, MdRippleModule, StyleModule, A11yModule, PlatformModule, CompatibilityModule, ObserveContentModule, MdSidenavModule, MdToolbarModule, MdRadioModule, MdProgressBarModule, MdGridListModule, RtlModule, MdSelectModule } from '@angular/material';
-import { MdGridTile } from "@angular/material/typings/grid-list/grid-tile";
+import { MdInputModule, MdDialogModule, MdTooltipModule, MdButtonModule, MdIconModule, MdTabsModule, MdCardModule, OverlayModule, MdProgressSpinnerModule, MdSnackBarModule, MdMenuModule, MdCheckboxModule, MdListModule, MdSidenavModule, MdToolbarModule, MdRadioModule, MdProgressBarModule, MdGridListModule, MdSelectModule, MdExpansionModule } from '@angular/material';
 // List of components to import
 const MATERIAL_MODULES = [
     MdInputModule,
@@ -28,21 +27,14 @@ const MATERIAL_MODULES = [
     MdMenuModule,
     MdCheckboxModule,
     MdListModule,
-    MdRippleModule,
     MdSidenavModule,
     MdToolbarModule,
-    StyleModule,
-    A11yModule,
-    RtlModule,
-    PlatformModule,
-    CompatibilityModule,
-    ObserveContentModule,
     MdRadioModule,
     MdGridListModule,
-    MdSelectModule
+    MdSelectModule,
+    MdExpansionModule
 ]
 @NgModule({
-    imports: MATERIAL_MODULES,
     exports: MATERIAL_MODULES
 })
 // Export the module

@@ -1,11 +1,6 @@
+import { BlogPostViewerComponent } from './partials/blogpostviewer.component';
+import { BlogHomepageComponent } from './partials/bloghome.component';
 import { SafeHtmlPipe } from './partials/safehtml.pipe';
-import { ProjectMaterial2DocsComponent } from './partials/projects/material2-docs.component';
-import { ProjectScriptsForMacComponent } from './partials/projects/scriptsformac.component';
-import { ProjectMdTodoComponent } from './partials/projects/mdtodo.component';
-import { ProjectSwiftComponent } from './partials/projects/swiftapp.component';
-import { ProjectMarketComponent } from './partials/projects/market.component';
-import { ProjectFirstModComponent } from './partials/projects/firstmod.component';
-import { ProjectsComponent, WarningsDialog } from './partials/projects.component';
 import { TOCComponent, TOCDirective } from './partials/toc.directive';
 import { MdIconRegistry, OverlayContainer } from '@angular/material';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
@@ -21,12 +16,10 @@ import { Chan4077GithubIoMaterialModule } from "./chan4077.github.io.module";
 // App routing
 import { routing } from "./app.routing";
 // App components
-import { AboutComponent } from './partials/about.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './partials/home.component';
 import { PageNotFoundComponent } from './partials/page-not-found.component';
 // App dialogs
-import { SendFeedbackDialog } from "./dialogs/sendfeedback.component";
 import { SettingsDialog } from './dialogs/settingsdialog.component';
 import { UrlDialog } from './dialogs/urldialog.component';
 import { ShareDialog } from "./dialogs/sharedialog.component";
@@ -37,24 +30,15 @@ import { UrlDialogService } from './services/urldialog.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     PageNotFoundComponent,
-    // App projects
-    ProjectsComponent,
-    ProjectFirstModComponent,
-    ProjectMarketComponent,
-    ProjectMdTodoComponent,
-    ProjectScriptsForMacComponent,
-    ProjectSwiftComponent,
-    ProjectMaterial2DocsComponent,
     TOCComponent,
+    BlogHomepageComponent,
+    BlogPostViewerComponent,
     // App dialogs
-    SendFeedbackDialog,
     SettingsDialog,
     UrlDialog,
     ShareDialog,
     ExperimentsDialog,
-    WarningsDialog,
     // App directives
     TOCDirective,
     // App pipes
@@ -78,12 +62,10 @@ import { UrlDialogService } from './services/urldialog.service';
     AppComponent
   ],
   entryComponents: [
-    SendFeedbackDialog,
     SettingsDialog,
     UrlDialog,
     ShareDialog,
-    ExperimentsDialog,
-    WarningsDialog
+    ExperimentsDialog
   ]
 })
 export class AppModule {
@@ -92,6 +74,7 @@ export class AppModule {
    * https://materialdesignicons.com
    */
   constructor(iconRegistry: MdIconRegistry, sanitizer: DomSanitizer, overlayContainer: OverlayContainer) {
-    iconRegistry.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('https://chan4077.github.io/res/mdi.svg'));
+    // iconRegistry.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('https://chan4077.github.io/res/mdi.svg'));
+    iconRegistry.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('assets/mdi.svg'));
   }
 }

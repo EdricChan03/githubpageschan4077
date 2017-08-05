@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Chan4077.Github.io's Blog</title>
+<subtitle>Insert a Subtitle Here</subtitle>
+<link href="http://githubpageschan4077.firebaseapp.com/blog"/>
+<updated>2017-08-05T06:30:16.739Z</updated>
+<author>
+<name>Edric Chan</name>
+<email>edric.chan.1997.1@gmail.com</email>
+</author>
+<entry>
+<title>Introducing the all new RSS Reader</title>
+<link href="http://domain.com/page/ "/>
+<id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+<updated>2006-12-13T18:20:02Z</updated>
+<summary>Short Summary</summary>
+</entry>
+</feed>
