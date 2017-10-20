@@ -8,41 +8,56 @@
 ---
 
 # githubpageschan4077
-This project aims to bring a [material2](https://github.com/angular/material2) look to the page and is generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
-
-For the moment, please view it [here](https://githubpageschan4077.firebaseapp.com).
+This project aims to bring a [material2](https://github.com/angular/material2) look to the page and is generated with [Angular CLI](https://github.com/angular/angular-cli) version `1.3.1`.
+The website is available [here](https://githubpageschan4077.firebaseapp.com).
 
 ## Notes
 - In the future, the [blogspot](https://chanziyangedric.blogspot.com) will be taken down and replaced by this repo under the `/blog` URL
 - This project is still under beta and may break at any time
-- `npm install` may take a while to run since there are **so many** more dependencies! :(
+
 ---
 ## Building the source code
 If you want to build the source code, follow these steps:
 
-1. Clone or download to your desktop using the button Clone or download or use
-`git clone https://github.com/Chan4077/githubpageschan4077.git`.
+1. Clone or download to your desktop using the button Clone or download or enter this command in your MacOS Terminal or your Windows Command Line. If you use Windows, please ensure that you have `git` installed before continuing.
+    ```bash
+    git clone https://github.com/Chan4077/githubpageschan4077.git
+    ```
 2. Run the following:
 
      ```bash
      cd path/to/githubpageschan4077 # Replace with your actual path
      npm install        # Used to install the dependencies
-     ng serve           # Serve using the @angular/cli v1.1.1
+     ng serve           # Serve using the @angular/cli v1.3.1
      ```
-     
+For more info about `@angular/cli`, head [here](#).
 3. Navigate to `localhost:4200` on your browser and you should see the code there.
 Done!
 
 ## Contributing
-For those who would like to contribute, please send me a DM _(Direct Message)_ at Twitter (Chan4077) or Google+.
+For those who would like to contribute, please DM _(Direct Message)_ me at Twitter ([@EdricChan03](https://twitter.com/EdricChan03)) or Google+.
 
 ## License & Credits
-- Licensed with `MIT`.
-- [View license](/LICENSE)
+```
+MIT License
 
-Thanks to all those demos online for helping me! :tada: :smile:
+Copyright (c) 2017 Edric Chan
 
-## TODO
-- Add a blog to this site
-- Use HTML instead of a markdown reader for project README (In-progress)
-- 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
