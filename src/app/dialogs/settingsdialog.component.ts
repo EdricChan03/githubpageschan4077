@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'settings-dialog',
@@ -15,7 +15,7 @@ export class SettingsDialog implements OnInit {
     // TODO: Change colour of accent
     {value: 'yellow-green', displayText: 'Yellow green (dark)'}
   ]
-  constructor(public dialogRef: MdDialogRef<SettingsDialog>) {}
+  constructor(public dialogRef: MatDialogRef<SettingsDialog>) {}
   clearSettings(): void {
     if (confirm('Are you sure you want to clear settings? This cannot be undone!')) {
     console.log('Clearing...');

@@ -1,0 +1,25 @@
+<div class="latest-commit-container">
+	<mat-card id="latestCommit">
+		<mat-card-title>Latest commit</mat-card-title>
+		<mat-card-content>
+			<p><strong>Message:</strong>
+				<span [innerText]="latestCommitCommit?.message"></span></p>
+			<p><strong>Committer:</strong> {{latestCommitCommitAuthor?.name}}</p>
+			<p><strong>SHA:</strong> <code class="docs-code">{{latestCommit?.sha}}</code></p>
+			<p><strong>Date:</strong> {{latestCommitCommitAuthor?.date | date:'medium'}}</p>
+		</mat-card-content>
+		<mat-card-actions align="end">
+			<button mat-button (click)="refresh()" class="docs-btn" [disabled]="isRefreshing">
+					<mat-icon svgIcon="refresh"></mat-icon>
+					Refresh Commit
+				</button>
+			<a mat-button [href]="latestCommit?.html_url" class="docs-btn" target="_blank" color="primary">
+				<mat-icon svgIcon="open-in-new"></mat-icon>
+				View commit
+			</a>
+		</mat-card-actions>
+		<mat-card-footer>
+			<mat-progress-bar mode="indeterminate" class="latest-commit-progress" *ngIf="isRefreshing"></mat-progress-bar>
+		</mat-card-footer>
+	</mat-card>
+</div>

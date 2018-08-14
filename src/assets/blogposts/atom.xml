@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+	<channel>
+		<title>Chan4077.Github.io's blog</title>
+		<link>https://githubpageschan4077.firebaseapp.com/blog</link>
+		<description>Edric's second blog.</description>
+		<item>
+			<title>Introducing the all new RSS Reader</title>
+			<link>https://githubpageschan4077.firebaseapp.com/blog/2017-08-05-introducing-rss-reader.html</link>
+			<description>New RSS tutorial on W3Schools</description>
+		</item>
+		<item>
+			<title>XML Tutorial</title>
+			<link>https://www.w3schools.com/xml</link>
+			<description>New XML tutorial on W3Schools</description>
+		</item>
+	</channel>
+</rss>

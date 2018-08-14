@@ -1,10 +1,10 @@
-<h2 md-dialog-title>Experiments <span class="badge beta"></span></h2>
-<md-dialog-content fxLayout="column">
+<h2 mat-dialog-title>Experiments <span class="badge beta"></span></h2>
+<mat-dialog-content fxLayout="column">
 	<section class="section">
-		<md-checkbox class="checkbox" [(ngModel)]="experiments.shareDialog">Enable share dialog</md-checkbox>
-		<md-checkbox class="checkbox" [(ngModel)]="experiments.notification" color="warn">Enable notifications</md-checkbox>
+		<mat-checkbox class="checkbox" [(ngModel)]="experiments.shareDialog">Enable share dialog</mat-checkbox>
+		<mat-checkbox class="checkbox" [(ngModel)]="experiments.notification" color="warn">Enable notifications</mat-checkbox>
 	</section>
-</md-dialog-content>
-<md-dialog-actions align="end">
-	<button md-button color="primary" md-dialog-close (click)="saveExperiments(experiments)">Save</button>
-</md-dialog-actions>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+	<button mat-button color="primary" (click)="saveExperiments(experiments)">Save</button>
+</mat-dialog-actions>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 @Component({
     selector: 'url-dialog',
     templateUrl: './urldialog.component.html'
@@ -10,7 +10,7 @@ export class UrlDialog implements OnInit {
     isDarkTheme: boolean;
     url: string;
     openNewTab: boolean;
-    constructor(public dialogRef: MdDialogRef<UrlDialog>) {}
+    constructor(public dialogRef: MatDialogRef<UrlDialog>) {}
 
     ngOnInit() {
         this.settings = JSON.parse(localStorage.getItem('settings')) || { 'isDarkTheme': true, 'showDeveloper': false };

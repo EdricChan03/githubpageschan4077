@@ -1,6 +1,22 @@
+<mat-toolbar color="accent" class="mat-elevation-z3">
+	<a mat-button routerLink="/" class="breadcrumb">Chan4077.Github.io</a> > <a mat-button routerLink="/blog" class="breadcrumb">Blog</a>
+</mat-toolbar>
 <h2>Blog</h2>
-<p>Welcome to the blog! Please note that this is a WIP!</p>
+<p>Welcome to the beta blog! This is where I'll be posting weekly posts although right now, it hasn't been updated for a while. 😕</p>
 
-<ul>
-	<li *ngFor="let blogpost of blogposts">{{blogpost.title}}</li>
-</ul>
+<mat-nav-list>
+	<h3 mat-subheader>Latest post</h3>
+	<ng-container *ngFor="let blogpost of blogposts">
+		<a mat-list-item [routerLink]="['/blog', blogpost.url]" *ngIf="blogpost.isLatest">
+			<mat-icon mat-list-icon [svgIcon]="blogpost.icon" *ngIf="blogpost.icon"></mat-icon>
+			<h3 mat-line>{{blogpost.title}}</h3>
+			<p mat-line>{{blogpost.shortenedContent}}</p>
+		</a>
+	</ng-container>
+	<h3 mat-subheader>All posts</h3>
+	<a mat-list-item [routerLink]="['/blog', blogpost.url]" *ngFor="let blogpost of blogposts">
+		<mat-icon mat-list-icon [svgIcon]="blogpost.icon" *ngIf="blogpost.icon"></mat-icon>
+		<h3 mat-line>{{blogpost.title}}</h3>
+		<p mat-line>{{blogpost.shortenedContent}}</p>
+	</a>
+</mat-nav-list>

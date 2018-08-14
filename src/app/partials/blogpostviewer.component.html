@@ -1,14 +1,9 @@
-<md-toolbar color="accent">
-    <button md-icon-button (click)="goBack()">
-        <md-icon svgIcon="arrow-left"></md-icon>
+<mat-toolbar color="accent" class="mat-elevation-z3">
+    <button mat-icon-button (click)="goBack()">
+        <mat-icon svgIcon="arrow-left"></mat-icon>
     </button>
-    {{docTitle}}
-</md-toolbar>
-<div class="archive">
-    <md-expansion-panel #archivePanel>
-        Content
-    </md-expansion-panel>
-</div>
-<div class="blogpost-content">
-    <router-outlet></router-outlet>
-</div>
+    <a mat-button routerLink="/" class="breadcrumb">Chan4077.Github.io</a> &gt;
+    <a mat-button routerLink="/blog" class="breadcrumb">Blog</a> &gt;
+    <a mat-button [routerLink]="blogpostId">{{currentBreadCrumb}}</a>
+</mat-toolbar>
+<div class="blogpost-content" #blogpost></div>

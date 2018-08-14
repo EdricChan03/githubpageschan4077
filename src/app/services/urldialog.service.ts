@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { MdSnackBar, MdDialog } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 
 // UrlDialog
 import { UrlDialog } from '../dialogs/urldialog.component';
 @Injectable()
 export class UrlDialogService {
     settings: any = JSON.parse(localStorage.getItem('settings')) || {};
-    constructor(private snackbar: MdSnackBar, private dialog: MdDialog) { }
+    constructor(private snackbar: MatSnackBar, private dialog: MatDialog) { }
     /**
      * Goes to a url
      * @version 1.0.0
@@ -24,17 +24,14 @@ export class UrlDialogService {
                 // Do nothing
                 this.snackbar.open('You cancelled the redirect', null, { duration: 5000 });
             } else if (result == 'redirect') {
-                if (this.settings.openNewTab) {
                     console.debug('Opening ' + url + ' in a new tab.');
                     window.open(
                         url,
                         '_blank'
                     );
-
-                } else {
-                    window.location.href = url;
-                }
-            }
+            } else {
+				window.location.href = url;
+			}
         })
     }
 }

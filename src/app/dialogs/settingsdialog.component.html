@@ -1,35 +1,35 @@
-<h2 md-dialog-title>Preferences</h2>
-<md-dialog-content fxLayout="column">
+<h2 mat-dialog-title>Preferences</h2>
+<mat-dialog-content fxLayout="column">
     <form #settingsForm="ngForm">
-        <md-tab-group dynamicHeight>
-            <md-tab label="General">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="General">
                 <h2>General Preferences</h2>
                 <section class="section">
-                    <md-checkbox [(ngModel)]="settings.openNewTab" color="primary" class="checkbox" name="openNewTab">Open links in a new tab</md-checkbox>
-                    <md-checkbox [(ngModel)]="settings.showScrollToTop" color="warn" class="checkbox" name="showScrollToTop">Show <code>Scroll To Top button</code></md-checkbox>
+                    <mat-checkbox [(ngModel)]="settings.openNewTab" color="primary" class="checkbox" name="openNewTab">Open links in a new tab</mat-checkbox>
+                    <mat-checkbox [(ngModel)]="settings.showScrollToTop" color="warn" class="checkbox" name="showScrollToTop">Show <code>Scroll To Top button</code></mat-checkbox>
                     <br>
-                    <md-select [(ngModel)]="settings.customTheme" placeholder="Select theme" name="customTheme" required color="primary">
-                        <md-option *ngFor="let theme of themes" [value]="theme.value">
+                    <mat-select [(ngModel)]="settings.customTheme" placeholder="Select theme" name="customTheme" required color="primary">
+                        <mat-option *ngFor="let theme of themes" [value]="theme.value">
                             {{theme.displayText}}
-                        </md-option>
-                    </md-select>
+                        </mat-option>
+                    </mat-select>
                 </section>
-            </md-tab>
-            <md-tab label="Experimental">
+            </mat-tab>
+            <mat-tab label="Experimental">
                 <h2>Experimental Preferences</h2>
                 <section class="section">
-                    <md-input-container class="full-width">
-                        <input mdInput placeholder="Duration of toasts in milliseconds" value="1000" [(ngModel)]="settings.durationToasts" name="durationToasts">
-                    </md-input-container>
+                    <mat-input-container class="full-width">
+                        <input matInput placeholder="Duration of toasts in milliseconds" value="1000" [(ngModel)]="settings.durationToasts" name="durationToasts">
+                    </mat-input-container>
                 </section>
-            </md-tab>
-        </md-tab-group>
+            </mat-tab>
+        </mat-tab-group>
     </form>
     <p class="note">Please refresh your page to apply changes.</p>
-</md-dialog-content>
-<md-dialog-actions align="end">
-    <button md-button color="warn" (click)="clearSettings(); dialogRef.close('clear')">Clear Settings</button>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button color="warn" (click)="clearSettings(); dialogRef.close('clear')">Clear Settings</button>
     <span fxFlex></span>
-    <button md-button color="primary" (click)="dialogRef.close('cancel')">Cancel</button>
-    <button md-button color="primary" (click)="dialogRef.close(settings)" [disabled]="!settingsForm.form.valid">Save</button>
-</md-dialog-actions>
+    <button mat-button color="primary" (click)="dialogRef.close('cancel')">Cancel</button>
+    <button mat-button color="primary" (click)="dialogRef.close(settings)" [disabled]="!settingsForm.form.valid">Save</button>
+</mat-dialog-actions>

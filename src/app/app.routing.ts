@@ -1,3 +1,5 @@
+import { StatusComponent } from './partials/status.component';
+import { FeedbackComponent } from './feedback.component';
 import { BlogPostViewerComponent } from './partials/blogpostviewer.component';
 import { BlogHomepageComponent } from './partials/bloghome.component';
 import { PageNotFoundComponent } from './partials/page-not-found.component';
@@ -23,12 +25,22 @@ import { HomeComponent } from "./partials/home.component";
  * @type {Routes[]}
  */
 export const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'blog', component: BlogHomepageComponent, children: [
-	  { path: ':id', component: BlogPostViewerComponent}
-  ]},
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: '**', component: PageNotFoundComponent}
+	{ path: 'home', component: HomeComponent },
+	{
+		path: 'blog', children: [
+			{
+				path: ':id', children: [
+					{ path: '', component: BlogPostViewerComponent }
+				],
+
+			},
+			{ path: '', component: BlogHomepageComponent }
+		]
+	},
+	{ path: 'feedback', component: FeedbackComponent },
+	{ path: 'status', component: StatusComponent },
+	{ path: '', redirectTo: '/home', pathMatch: 'full' },
+	{ path: '**', component: PageNotFoundComponent }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes);

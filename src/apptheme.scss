@@ -1,22 +1,18 @@
 @import '~@angular/material/theming';
-
 @include mat-core();
 // TODO: Add more custom themes
-
 @mixin app-theme($theme) {
-	$primary: map-get($theme, primary);
-
-	.active-link {
-		background-color: mat-color($primary) !important;
-		color: white !important;
-	}
+    $primary: map-get($theme, primary);
+    .active-link {
+        background-color: mat-color($primary) !important;
+        color: white !important;
+    }
 }
+
 .indigo-pink {
     $primary: mat-palette($mat-indigo);
     $accent: mat-palette($mat-pink);
-
     $indigo-pink-theme: mat-light-theme($primary, $accent);
-
     @include angular-material-theme($indigo-pink-theme);
     @include app-theme($indigo-pink-theme);
     .active-link {
@@ -32,15 +28,14 @@
         background-color: mat-color($accent);
     }
 }
+
 .blue-pink {
     $primary: mat-palette($mat-blue);
     $accent: mat-palette($mat-pink);
-
     $blue-pink-theme: mat-light-theme($primary, $accent);
-
     @include angular-material-theme($blue-pink-theme);
     @include app-theme($blue-pink-theme);
-	.sticky-header {
+    .sticky-header {
         position: -webkit-sticky;
         position: sticky;
         top: 56px;
@@ -50,14 +45,13 @@
         background-color: mat-color($accent);
     }
 }
+
 .yellow-green {
     $primary: mat-palette($mat-yellow);
     $accent: mat-palette($mat-green);
-
     $yellow-red-theme: mat-dark-theme($primary, $accent);
-
-	@include angular-material-theme($yellow-red-theme);
-	@include app-theme($yellow-red-theme);
+    @include angular-material-theme($yellow-red-theme);
+    @include app-theme($yellow-red-theme);
     color: white;
     a {
         color: white;
@@ -85,36 +79,55 @@
         background-color: mat-color($accent);
     }
 }
+
 // Styles from styles.css
+
 /* Font family for Roboto */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
 /* Font families */
-h1, h2, h3, h4, h5, h6, p {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     /* The outline around any element */
     outline: none;
     /* Sets all elements to have Roboto and sans-serif as a fallback font */
     font-family: Roboto, sans-serif;
 }
+
+
 /*
 Styles `.hidden` to be not visible
 */
+
 .hidden {
     visibility: hidden;
 }
+
+
 /*
 Styles the <svg> element to use the Material Icon size of 24x24 pixels
 */
+
 svg {
     height: 24px;
     width: 24px;
 }
+
 .menu-icon {
     padding-bottom: 12px;
 }
+
+
 /*
 Progress spinner
 Based on Google Newsstand startup
 */
+
 .is-loading {
     position: absolute;
     top: 0;
@@ -132,59 +145,87 @@ Based on Google Newsstand startup
     justify-content: center;
     text-align: center;
 }
+
+
 /*
 More styles for progress spinner
 */
+
 .loading-indicator {
     width: 50px !important;
     height: 50px !important;
 }
+
+
 /* Styles for flex and so on */
-.radio-group, .section {
+
+.radio-group,
+.section {
     display: inline-flex;
     flex-direction: column;
 }
-.radio, .checkbox {
+
+.radio,
+.checkbox {
     margin: 5px;
 }
+
 .full-width {
     width: 100% !important;
 }
+
+
 /*
 Styles for about.component.html
 */
+
 .about-paragraph {
     text-indent: 40px;
 }
+
 .about-list {
     list-style-position: inside;
 }
-.toc {
 
-}
+.toc {}
+
+
 /*
 Sets button text to be in caps (Based on the Material Guidelines)
 Buttons with class `.no-caps` won't be in caps
 */
-button[md-button]:not(.no-caps), button[md-raised-button]:not(.no-caps) {
+
+button[mat-button]:not(.no-caps),
+button[mat-raised-button]:not(.no-caps),
+a[mat-button]:not(.no-caps),
+a[mat-raised-button]:not(.no-caps) {
     text-transform: uppercase;
 }
+
 img:not(.shield-badge) {
     width: 100%;
 }
+
+
 /*
 Styles for about page
 */
+
 .about-header {
     display: inline-block;
-    padding: 8px;;
+    padding: 8px;
 }
+
+
 /*
 This will style all children, grandchildren, etc. in `.about-header`
 */
+
 .about-header * {
     display: inherit !important;
 }
+
+
 /*
 Sets the toolbar on top to be fixed
 Note that this relies on position: sticky; which is experimental.
@@ -192,39 +233,66 @@ Status on browsers supported: https://caniuse.com/#feat=css-sticky
 As of now, IE and Edge don't support this feature
 TODO: Add javascript to fix toolbar to top on browsers which have no support for position: sticky;
 */
+
 .fixed-toolbar {
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
     display: block;
 }
-.app-action {
-  display: inline-block;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+
+.main-toolbar {
+    z-index: 1;
 }
+
+.breadcrumb {
+    font-size: initial;
+}
+
+.margin {
+    margin: 3px;
+}
+
+.input-width {
+    width: 100% !important;
+}
+
+.app-action {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
 .bold {
     font-weight: bold;
 }
-.project-content, .padding-content {
+
+.project-content,
+.padding-content {
     padding: 10px;
 }
+
+
 /*
 For listing in `projects
 */
+
 .link-overwrite {
     text-decoration: underline !important;
 }
+
+
 /*
 Badges for beta, stable and so on
 CSS from https://angular.io
 */
+
 .badge {
     background: #fff;
     border: 2px solid #607D8B;
     border-radius: 2px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     color: #607D8B;
     display: inline-block;
@@ -236,17 +304,21 @@ CSS from https://angular.io
     text-align: center;
     text-transform: uppercase;
 }
+
 .badge.beta {
     border-color: #8E24AA;
     color: #8E24AA;
 }
+
 .badge.beta:before {
     content: "beta";
 }
+
 summary.spoiler {
     padding: 4px;
     /*background-color: ;*/
 }
+
 a {
     text-decoration: underline;
     cursor: pointer;
