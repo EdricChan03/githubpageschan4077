@@ -6,7 +6,7 @@ import { PageNotFoundComponent } from './partials/page-not-found.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 // App components
-import { HomeComponent } from "./partials/home.component";
+import { HomeComponent } from './partials/home.component';
 /**
  * Routes used for routing the app
  * @version 1.0.2
@@ -15,32 +15,31 @@ import { HomeComponent } from "./partials/home.component";
  * // Import into app.module.ts
  * // app.module.ts
  * import {routing} from './app.routing';
- * 
+ *
  * @NgModule({
- * 	imports: [
- * 		routing
+ *  imports: [
+ *    routing
  *  ]
  * })
  * @description Paths to route to with components
- * @type {Routes[]}
  */
 export const routes: Routes = [
-	{ path: 'home', component: HomeComponent },
-	{
-		path: 'blog', children: [
-			{
-				path: ':id', children: [
-					{ path: '', component: BlogPostViewerComponent }
-				],
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'blog', children: [
+      {
+        path: ':id', children: [
+          { path: '', component: BlogPostViewerComponent }
+        ],
 
-			},
-			{ path: '', component: BlogHomepageComponent }
-		]
-	},
-	{ path: 'feedback', component: FeedbackComponent },
-	{ path: 'status', component: StatusComponent },
-	{ path: '', redirectTo: '/home', pathMatch: 'full' },
-	{ path: '**', component: PageNotFoundComponent }
+      },
+      { path: '', component: BlogHomepageComponent }
+    ]
+  },
+  { path: 'feedback', component: FeedbackComponent },
+  { path: 'status', component: StatusComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -10,7 +10,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -31,56 +31,56 @@ import { ExperimentsDialog } from './dialogs/experimentsdialog.component';
 import { UrlDialogService } from './services/urldialog.service';
 import 'hammerjs';
 @NgModule({
-	declarations: [
-		AppComponent,
-		HomeComponent,
-		PageNotFoundComponent,
-		FeedbackComponent,
-		TOCComponent,
-		BlogHomepageComponent,
-		BlogPostViewerComponent,
-		// App dialogs
-		SettingsDialog,
-		UrlDialog,
-		ShareDialog,
-		ExperimentsDialog,
-		// App directives
-		TOCDirective,
-		// App pipes
-		SafeHtmlPipe,
-		StatusComponent
-	],
-	imports: [
-		BrowserModule,
-		FormsModule,
-		ReactiveFormsModule,
-		HttpModule,
-		BrowserAnimationsModule,
-		MaterialModule,
-		AppRouting,
-		FlexLayoutModule,
-		BlogPostModule
-	],
-	providers: [
-		UrlDialogService
-	],
-	bootstrap: [
-		AppComponent
-	],
-	entryComponents: [
-		SettingsDialog,
-		UrlDialog,
-		ShareDialog,
-		ExperimentsDialog
-	]
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    FeedbackComponent,
+    TOCComponent,
+    BlogHomepageComponent,
+    BlogPostViewerComponent,
+    // App dialogs
+    SettingsDialog,
+    UrlDialog,
+    ShareDialog,
+    ExperimentsDialog,
+    // App directives
+    TOCDirective,
+    // App pipes
+    SafeHtmlPipe,
+    StatusComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    AppRouting,
+    FlexLayoutModule,
+    BlogPostModule
+  ],
+  providers: [
+    UrlDialogService
+  ],
+  bootstrap: [
+    AppComponent
+  ],
+  entryComponents: [
+    SettingsDialog,
+    UrlDialog,
+    ShareDialog,
+    ExperimentsDialog
+  ]
 })
 export class AppModule {
-	/* Icons
-	 * From MaterialDesignIcons
-	 * https://materialdesignicons.com
-	 */
-	constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-		// iconRegistry.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('https://chan4077.github.io/res/mdi.svg'));
-		iconRegistry.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('assets/mdi.svg'));
-	}
+  /* Icons
+   * From MaterialDesignIcons
+   * https://materialdesignicons.com
+   */
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    // iconRegistry.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('https://chan4077.github.io/res/mdi.svg'));
+    iconRegistry.addSvgIconSet(sanitizer.bypassSecurityTrustResourceUrl('assets/mdi.svg'));
+  }
 }

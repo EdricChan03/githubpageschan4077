@@ -11,51 +11,51 @@
 import { NgModule } from '@angular/core';
 // MaterialModules to import
 import {
-	MatInputModule,
-	MatDialogModule,
-	MatTooltipModule,
-	MatButtonModule,
-	MatIconModule,
-	MatTabsModule,
-	MatCardModule,
-	MatProgressSpinnerModule,
-	MatSnackBarModule,
-	MatMenuModule,
-	MatCheckboxModule,
-	MatListModule,
-	MatSidenavModule,
-	MatToolbarModule,
-	MatRadioModule,
-	MatProgressBarModule,
-	MatGridListModule,
-	MatSelectModule,
-	MatExpansionModule
+  MatInputModule,
+  MatDialogModule,
+  MatTooltipModule,
+  MatButtonModule,
+  MatIconModule,
+  MatTabsModule,
+  MatCardModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatRadioModule,
+  MatProgressBarModule,
+  MatGridListModule,
+  MatSelectModule,
+  MatExpansionModule
 } from '@angular/material';
 // List of components to import
 const MATERIAL_MODULES = [
-	MatInputModule,
-	MatDialogModule,
-	MatTooltipModule,
-	MatButtonModule,
-	MatIconModule,
-	MatTabsModule,
-	MatCardModule,
-	MatProgressSpinnerModule,
-	MatProgressBarModule,
-	MatSnackBarModule,
-	MatMenuModule,
-	MatCheckboxModule,
-	MatListModule,
-	MatSidenavModule,
-	MatToolbarModule,
-	MatRadioModule,
-	MatGridListModule,
-	MatSelectModule,
-	MatExpansionModule
-]
+  MatInputModule,
+  MatDialogModule,
+  MatTooltipModule,
+  MatButtonModule,
+  MatIconModule,
+  MatTabsModule,
+  MatCardModule,
+  MatProgressSpinnerModule,
+  MatProgressBarModule,
+  MatSnackBarModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatRadioModule,
+  MatGridListModule,
+  MatSelectModule,
+  MatExpansionModule
+];
 @NgModule({
-	imports: MATERIAL_MODULES,
-	exports: MATERIAL_MODULES
+  imports: MATERIAL_MODULES,
+  exports: MATERIAL_MODULES
 })
 // Export the module
 export class MaterialModule { }

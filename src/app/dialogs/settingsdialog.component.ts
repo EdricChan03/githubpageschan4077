@@ -5,26 +5,32 @@ import { MatDialogRef } from '@angular/material';
   selector: 'settings-dialog',
   templateUrl: './settingsdialog.component.html'
 })
-
+// tslint:disable-next-line:component-class-suffix
 export class SettingsDialog implements OnInit {
   settings: any;
   // Warn will be set as orange by default
   themes = [
-    {value: 'indigo-pink', displayText: 'Indigo pink'},
-    {value: 'blue-pink', displayText: 'Blue pink'},
+    { value: 'indigo-pink', displayText: 'Indigo pink' },
+    { value: 'blue-pink', displayText: 'Blue pink' },
     // TODO: Change colour of accent
-    {value: 'yellow-green', displayText: 'Yellow green (dark)'}
-  ]
-  constructor(public dialogRef: MatDialogRef<SettingsDialog>) {}
+    { value: 'yellow-green', displayText: 'Yellow green (dark)' }
+  ];
+  constructor(public dialogRef: MatDialogRef<SettingsDialog>) { }
   clearSettings(): void {
     if (confirm('Are you sure you want to clear settings? This cannot be undone!')) {
-    console.log('Clearing...');
-    localStorage.removeItem('settings');
+      console.log('Clearing...');
+      localStorage.removeItem('settings');
     } else {
       console.log('User cancelled');
     }
   }
   ngOnInit(): void {
-    this.settings = JSON.parse(localStorage.getItem('settings')) || {'isDarkTheme': false, 'openNewTab': false, 'showScrollToTop': true, 'durationToasts': 1000, 'customTheme': 'indigo-pink'};
+    this.settings = JSON.parse(localStorage.getItem('settings')) || {
+      isDarkTheme: false,
+      openNewTab: false,
+      showScrollToTop: true,
+      durationToasts: 1000,
+      customTheme: 'indigo-pink'
+    };
   }
 }

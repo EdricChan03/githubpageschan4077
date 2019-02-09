@@ -1,22 +1,22 @@
 <form #form="ngForm" fxLayout="column" class="margin">
-	<mat-input-container class="input-width">
-		<input matInput name="user" [(ngModel)]="form.user" required placeholder="Name">
-		<mat-error>This is required.</mat-error>
-	</mat-input-container>
-	<mat-input-container class="input-width">
-		<textarea matInput name="feedback" [(ngModel)]="form.feedback" placeholder="Feedback" required></textarea>
-		<mat-error>This is required.</mat-error>
-	</mat-input-container>
-	<p>Overall, what do you think of the website?</p>
-	<mat-radio-group [(ngModel)]="form.rating" name="rating" fxLayout="column">
-		<mat-radio-button value="strongdisagree">Strongly disagree</mat-radio-button>
-		<mat-radio-button value="disagree">Disagree</mat-radio-button>
-		<mat-radio-button value="neutral">Neutral</mat-radio-button>
-		<mat-radio-button value="agree">Agree</mat-radio-button>
-		<mat-radio-button value="strongagree">Strongly agree</mat-radio-button>
-	</mat-radio-group>
-	<p>Tick the following that you would like to see implemented:</p>
-	<mat-checkbox name="impBlog" [(ngModel)]="form.impExperimental">Blog + RSS</mat-checkbox>
-	<mat-checkbox name="impFeedback" [(ngModel)]="form.impFeedback">Better feedback website (such as Google Forms)</mat-checkbox>
-	<mat-checkbox name="impShare" [(ngModel)]="form.impShare">Share preview + more sharing sites for the share dialog</mat-checkbox>
+  <mat-input-container class="input-width">
+    <input matInput name="user" [(ngModel)]="form.user" required placeholder="Name">
+    <mat-error>This is required.</mat-error>
+  </mat-input-container>
+  <mat-input-container class="input-width">
+    <textarea matInput name="feedback" [(ngModel)]="form.feedback" placeholder="Feedback" required></textarea>
+    <mat-error>This is required.</mat-error>
+  </mat-input-container>
+  <p>Overall, what do you think of the website?</p>
+  <mat-radio-group [(ngModel)]="form.rating" name="rating" fxLayout="column">
+    <mat-radio-button value="strongdisagree">Strongly disagree</mat-radio-button>
+    <mat-radio-button value="disagree">Disagree</mat-radio-button>
+    <mat-radio-button value="neutral">Neutral</mat-radio-button>
+    <mat-radio-button value="agree">Agree</mat-radio-button>
+    <mat-radio-button value="strongagree">Strongly agree</mat-radio-button>
+  </mat-radio-group>
+  <p>Tick the following that you would like to see implemented:</p>
+  <mat-checkbox name="impBlog" [(ngModel)]="form.impExperimental">Blog + RSS</mat-checkbox>
+  <mat-checkbox name="impFeedback" [(ngModel)]="form.impFeedback">Better feedback website (such as Google Forms)</mat-checkbox>
+  <mat-checkbox name="impShare" [(ngModel)]="form.impShare">Share preview + more sharing sites for the share dialog</mat-checkbox>
 </form>

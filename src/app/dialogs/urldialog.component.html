@@ -1,14 +1,14 @@
 <h2 mat-dialog-title>Redirect Notice</h2>
 <mat-dialog-content fxLayout="column">
-	<h3>NOTICE:</h3>
-	<p>You're leaving our site. If you didn't mean to click a link, please click <code>cancel</code>. If you did mean to, click
-		<code>Redirect</code></p>
-	<p>The link you clicked is: <em>{{url}}</em></p>
-	<p class="bold">Note that you have to allow popups in order for this to work.</p>
-	<mat-checkbox [(ngModel)]="openNewTab">Open in a new tab</mat-checkbox>
+  <h3>NOTICE:</h3>
+  <p>You're leaving our site. If you didn't mean to click a link, please click <code>cancel</code>. If you did mean to, click
+    <code>Redirect</code></p>
+  <p>The link you clicked is: <em>{{url}}</em></p>
+  <p class="bold">Note that you have to allow popups in order for this to work.</p>
+  <mat-checkbox [(ngModel)]="openNewTab">Open in a new tab</mat-checkbox>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-	<button mat-button (click)="dialogRef.close('cancel')" color="primary">Cancel</button>
-	<button mat-button (click)="dialogRef.close('redirectNew')" color="primary" *ngIf="openNewTab">Redirect</button>
-	<button mat-button (click)="dialogRef.close('redirect')" color="primary" *ngIf="!openNewTab">Redirect</button>
+  <button mat-button (click)="dialogRef.close('cancel')" color="primary">Cancel</button>
+  <button mat-button (click)="dialogRef.close('redirectNew')" color="primary" *ngIf="openNewTab">Redirect</button>
+  <button mat-button (click)="dialogRef.close('redirect')" color="primary" *ngIf="!openNewTab">Redirect</button>
 </mat-dialog-actions>

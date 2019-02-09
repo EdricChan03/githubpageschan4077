@@ -1,18 +1,18 @@
 [
-	{
-		"shortenedContent": "The all new RSS reader is availble now at this URL...",
-		"date": "2017-08-05",
-		"title": "Introducing the all new RSS Reader",
-		"url": "2017-08-05-introducing-rss-reader",
-		"component": "BlogRSSReader"
-	},
-	{
-		"shortenedContent": "Currently, I've been working on some projects and I will finally announce what these projects are...",
-		"date": "2017-08-24",
-		"title": "Status update #1",
-		"url": "2017-08-24-status-update-1",
-		"icon": "alert-octagon",
-		"isLatest": true,
-		"component": "BlogStatusUpdate1"
-	}
+  {
+    "shortenedContent": "The all new RSS reader is availble now at this URL...",
+    "date": "2017-08-05",
+    "title": "Introducing the all new RSS Reader",
+    "url": "2017-08-05-introducing-rss-reader",
+    "component": "BlogRSSReader"
+  },
+  {
+    "shortenedContent": "Currently, I've been working on some projects and I will finally announce what these projects are...",
+    "date": "2017-08-24",
+    "title": "Status update #1",
+    "url": "2017-08-24-status-update-1",
+    "icon": "alert-octagon",
+    "isLatest": true,
+    "component": "BlogStatusUpdate1"
+  }
 ]

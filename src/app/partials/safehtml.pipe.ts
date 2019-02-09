@@ -1,5 +1,5 @@
 import { DomSanitizer } from '@angular/platform-browser';
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 /**
  * Pipe for `safeHtml`
@@ -12,12 +12,12 @@ import { Pipe, PipeTransform } from "@angular/core";
  */
 @Pipe({ name: 'safeHtml' })
 export class SafeHtmlPipe implements PipeTransform {
-    noTimes: number = 1;
-    constructor(private sanitizer: DomSanitizer) { }
+  noTimes = 1;
+  constructor(private sanitizer: DomSanitizer) { }
 
-    transform(style) {
-        console.log('['+this.noTimes+'] HTML passed in as: '+style);
-        this.noTimes++;
-        return this.sanitizer.bypassSecurityTrustHtml(style);
-    }
+  transform(style) {
+    console.log('[' + this.noTimes + '] HTML passed in as: ' + style);
+    this.noTimes++;
+    return this.sanitizer.bypassSecurityTrustHtml(style);
+  }
 }

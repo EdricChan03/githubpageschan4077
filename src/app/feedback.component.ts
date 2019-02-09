@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'feedback-form',
-	templateUrl: './feedback.component.html'
+  selector: 'feedback-form',
+  templateUrl: './feedback.component.html'
 })
 export class FeedbackComponent {}

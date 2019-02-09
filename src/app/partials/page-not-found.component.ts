@@ -6,19 +6,15 @@ import { Router } from '@angular/router';
 })
 
 export class PageNotFoundComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
   /**
    * Refreshes
-   * @return {void}
-   * @version 1.0.2
    */
   refresh(): void {
-    window.location.reload(true);
+    window.location.reload();
   }
   /**
-   * Goes back to the previous {@link window.history}
-   * @return {void}
-   * @version 1.0.2
+   * Goes back to the previous item in the browser's history
    */
   goBack() {
     window.history.back();
