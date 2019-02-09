@@ -1,18 +1,18 @@
 [
   {
-    "shortenedContent": "The all new RSS reader is availble now at this URL...",
-    "date": "2017-08-05",
-    "title": "Introducing the all new RSS Reader",
-    "url": "2017-08-05-introducing-rss-reader",
-    "component": "BlogRSSReader"
+    "excerpt": "...",
+    "date": "2017-08-24",
+    "title": "Status Update #1",
+    "url": "2017-08-24-blog-status-update-1",
+    "component": "BlogStatusUpdate1"
   },
   {
-    "shortenedContent": "Currently, I've been working on some projects and I will finally announce what these projects are...",
-    "date": "2017-08-24",
-    "title": "Status update #1",
-    "url": "2017-08-24-status-update-1",
+    "excerpt": "As of 2019, this website will be deprecated in favour of...",
+    "date": "2019-02-09",
+    "title": "Deprecating GitHubPagesChan4077",
+    "url": "2019-02-09-deprecating-githubpageschan4077",
     "icon": "alert-octagon",
     "isLatest": true,
-    "component": "BlogStatusUpdate1"
+    "component": "BlogDeprecatingGitHubPagesChan4077"
   }
 ]

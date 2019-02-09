@@ -1,12 +1,5 @@
+import { Component, NgModule } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
-import { Component, Type, NgModule } from '@angular/core';
-
-@Component({
-  selector: 'blog-rss-reader',
-  templateUrl: '2017-08-05-introducing-rss-reader.html'
-})
-// tslint:disable-next-line:component-class-suffix
-export class BlogRSSReader {}
 
 @Component({
   selector: 'blog-status-update-1',
@@ -15,13 +8,22 @@ export class BlogRSSReader {}
 // tslint:disable-next-line:component-class-suffix
 export class BlogStatusUpdate1 {}
 
+@Component({
+  selector: 'blog-deprecating-githubpageschan4077',
+  templateUrl: '2019-02-09-deprecating-githubpageschan4077.html'
+})
+// tslint:disable-next-line:component-class-suffix
+export class BlogDeprecatingGitHubPagesChan4077 {}
+
 export interface Blogpost {
-  shortenedContent: SafeHtml | string | any;
+  excerpt: SafeHtml | string;
   date: Date | string;
   title: string;
   url: string;
-  component?: Type<any> | any;
-  tags: BlogpostTags[];
+  tags?: BlogpostTags[];
+  icon?: string;
+  component?: string;
+  isLatest?: boolean;
 }
 export interface BlogpostTags {
   name: string;
@@ -29,16 +31,16 @@ export interface BlogpostTags {
 
 @NgModule({
   declarations: [
-    BlogRSSReader,
-    BlogStatusUpdate1
+    BlogStatusUpdate1,
+    BlogDeprecatingGitHubPagesChan4077
   ],
   exports: [
-    BlogRSSReader,
-    BlogStatusUpdate1
+    BlogStatusUpdate1,
+    BlogDeprecatingGitHubPagesChan4077
   ],
   entryComponents: [
-    BlogRSSReader,
-    BlogStatusUpdate1
+    BlogStatusUpdate1,
+    BlogDeprecatingGitHubPagesChan4077
   ]
 })
 export class BlogPostModule {}
