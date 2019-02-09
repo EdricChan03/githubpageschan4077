@@ -1,35 +1,42 @@
 <h2 mat-dialog-title>Preferences</h2>
 <mat-dialog-content fxLayout="column">
-    <form #settingsForm="ngForm">
-        <mat-tab-group dynamicHeight>
-            <mat-tab label="General">
-                <h2>General Preferences</h2>
-                <section class="section">
-                    <mat-checkbox [(ngModel)]="settings.openNewTab" color="primary" class="checkbox" name="openNewTab">Open links in a new tab</mat-checkbox>
-                    <mat-checkbox [(ngModel)]="settings.showScrollToTop" color="warn" class="checkbox" name="showScrollToTop">Show <code>Scroll To Top button</code></mat-checkbox>
-                    <br>
-                    <mat-select [(ngModel)]="settings.customTheme" placeholder="Select theme" name="customTheme" required color="primary">
-                        <mat-option *ngFor="let theme of themes" [value]="theme.value">
-                            {{theme.displayText}}
-                        </mat-option>
-                    </mat-select>
-                </section>
-            </mat-tab>
-            <mat-tab label="Experimental">
-                <h2>Experimental Preferences</h2>
-                <section class="section">
-                    <mat-input-container class="full-width">
-                        <input matInput placeholder="Duration of toasts in milliseconds" value="1000" [(ngModel)]="settings.durationToasts" name="durationToasts">
-                    </mat-input-container>
-                </section>
-            </mat-tab>
-        </mat-tab-group>
-    </form>
-    <p class="note">Please refresh your page to apply changes.</p>
+  <form #settingsForm="ngForm">
+    <mat-tab-group dynamicHeight>
+      <mat-tab label="General">
+        <h2>General Preferences</h2>
+        <section class="section">
+          <mat-checkbox [(ngModel)]="settings.openNewTab" color="primary" class="checkbox" name="openNewTab">Open links
+            in a new tab</mat-checkbox>
+          <mat-checkbox [(ngModel)]="settings.showScrollToTop" color="warn" class="checkbox" name="showScrollToTop">Show
+            <code>Scroll To Top button</code></mat-checkbox>
+          <br>
+          <mat-form-field>
+            <mat-select [(ngModel)]="settings.customTheme" placeholder="Select theme" name="customTheme" required
+              color="primary">
+              <mat-option *ngFor="let theme of themes" [value]="theme.value">
+                {{theme.displayText}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+      </mat-tab>
+      <mat-tab label="Experimental">
+        <h2>Experimental Preferences</h2>
+        <section class="section">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Duration of toasts in milliseconds" value="1000"
+              [(ngModel)]="settings.durationToasts" name="durationToasts">
+          </mat-form-field>
+        </section>
+      </mat-tab>
+    </mat-tab-group>
+  </form>
+  <p class="note">Please refresh your page to apply changes.</p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button color="warn" (click)="clearSettings(); dialogRef.close('clear')">Clear Settings</button>
-    <span fxFlex></span>
-    <button mat-button color="primary" (click)="dialogRef.close('cancel')">Cancel</button>
-    <button mat-button color="primary" (click)="dialogRef.close(settings)" [disabled]="!settingsForm.form.valid">Save</button>
+  <button mat-button color="warn" (click)="clearSettings(); dialogRef.close('clear')">Clear Settings</button>
+  <span fxFlex></span>
+  <button mat-button color="primary" (click)="dialogRef.close('cancel')">Cancel</button>
+  <button mat-button color="primary" (click)="dialogRef.close(settings)"
+    [disabled]="!settingsForm.form.valid">Save</button>
 </mat-dialog-actions>

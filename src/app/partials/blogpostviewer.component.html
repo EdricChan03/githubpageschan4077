@@ -1,9 +1,11 @@
 <mat-toolbar color="accent" class="mat-elevation-z3">
-    <button mat-icon-button (click)="goBack()">
-        <mat-icon svgIcon="arrow-left"></mat-icon>
-    </button>
-    <a mat-button routerLink="/" class="breadcrumb">Chan4077.Github.io</a> &gt;
-    <a mat-button routerLink="/blog" class="breadcrumb">Blog</a> &gt;
-    <a mat-button [routerLink]="blogpostId">{{currentBreadCrumb}}</a>
+  <button mat-icon-button (click)="goBack()">
+    <mat-icon svgIcon="arrow-left"></mat-icon>
+  </button>
+  <a mat-button routerLink="/" class="breadcrumb">Chan4077.Github.io</a> &gt;
+  <a mat-button routerLink="/blog" class="breadcrumb">Blog</a> &gt;
+  <a mat-button [routerLink]="blogpostId">{{currentBreadCrumb}}</a>
 </mat-toolbar>
-<div class="blogpost-content" #blogpost></div>
+<div class="padding-percentage-container">
+  <ng-container #blogpost></ng-container>
+</div>

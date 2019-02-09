@@ -1,8 +1,9 @@
-<div class="latest-commit-container">
+<div class="latest-commit-container padding-percentage-container">
   <mat-card id="latestCommit">
     <mat-card-title>Latest commit</mat-card-title>
     <mat-card-content>
       <p><strong>Message:</strong>
+        <br>
         <span [innerText]="latestCommitCommit?.message"></span></p>
       <p><strong>Committer:</strong> {{latestCommitCommitAuthor?.name}}</p>
       <p><strong>SHA:</strong> <code class="docs-code">{{latestCommit?.sha}}</code></p>
@@ -10,9 +11,9 @@
     </mat-card-content>
     <mat-card-actions align="end">
       <button mat-button (click)="refresh()" class="docs-btn" [disabled]="isRefreshing">
-          <mat-icon svgIcon="refresh"></mat-icon>
-          Refresh Commit
-        </button>
+        <mat-icon svgIcon="refresh"></mat-icon>
+        Refresh Commit
+      </button>
       <a mat-button [href]="latestCommit?.html_url" class="docs-btn" target="_blank" color="primary">
         <mat-icon svgIcon="open-in-new"></mat-icon>
         View commit
