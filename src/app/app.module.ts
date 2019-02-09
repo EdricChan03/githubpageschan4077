@@ -30,6 +30,7 @@ import { ExperimentsDialog } from './dialogs/experimentsdialog.component';
 // App services
 import { UrlDialogService } from './services/urldialog.service';
 import 'hammerjs';
+import { DeprecatedToolbarComponent } from './partials/deprecated-toolbar/deprecated-toolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import 'hammerjs';
     TOCDirective,
     // App pipes
     SafeHtmlPipe,
-    StatusComponent
+    StatusComponent,
+    DeprecatedToolbarComponent
   ],
   imports: [
     BrowserModule,
