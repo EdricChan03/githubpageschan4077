@@ -1,3 +1,9 @@
+<h1 align="center">DEPRECATED</h1>
+
+This repository has been deprecated in favour of the new website available at [Chan4077.GitHub.io](https://chan4077.github.io) and will be archived by the end of February 2019. All future development of the new website is available [here](https://github.com/Chan4077/chan4077.github.io).
+
+---
+
 # Table of contents
 - [githubpageschan4077](#githubpageschan4077)
 - [Notes](#notes)
