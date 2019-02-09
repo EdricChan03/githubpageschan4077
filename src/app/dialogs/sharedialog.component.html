@@ -9,13 +9,13 @@
       </mat-select>
       <mat-checkbox [(ngModel)]="showMore" [ngModelOptions]="{standalone:true}">Show more info</mat-checkbox>
       <div [hidden]="!showMore" class="moreinfo">
-        <mat-input-container class="full-width" matTooltip="This is readonly and cannot be edited" matTooltipPosition="right">
+        <mat-form-field class="full-width" matTooltip="This is readonly and cannot be edited" matTooltipPosition="right">
           <input readonly [ngModel]="socialMedia.name" matInput placeholder="Name of social media" name="socialMediaType">
-        </mat-input-container>
+        </mat-form-field>
       </div>
-      <mat-input-container class="full-width">
+      <mat-form-field class="full-width">
         <textarea [(ngModel)]="socialMedia.text" matInput placeholder="Text of post" rows="2" cols="100" name="socialMediaText"></textarea>
-      </mat-input-container>
+      </mat-form-field>
     </section>
     <p class="important note">Please allow popups to continue.</p>
   </form>

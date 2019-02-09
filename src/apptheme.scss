@@ -2,84 +2,86 @@
 @include mat-core();
 // TODO: Add more custom themes
 @mixin app-theme($theme) {
-    $primary: map-get($theme, primary);
-    .active-link {
-        background-color: mat-color($primary) !important;
-        color: white !important;
-    }
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $is-dark-theme: map-get($theme, is-dark);
+  .active-link {
+    color: mat-color($primary) !important;
+    // Since it's a bit hard to actually see the text in the dark theme, it'll use the accent color if it's dark and primary if it's not. Same applies for mat-icon
+    color: if($is-dark-theme, mat-color($accent), mat-color($primary)) !important;
+    mat-icon {
+      color: if($is-dark-theme, mat-color($accent), mat-color($primary)) !important;
+    } // Note: These colors are based on the Android sidenav selection state
+    background-color: if($is-dark-theme, #595959, #DCDCDC) !important;
+  }
 }
 
 .indigo-pink {
-    $primary: mat-palette($mat-indigo);
-    $accent: mat-palette($mat-pink);
-    $indigo-pink-theme: mat-light-theme($primary, $accent);
-    @include angular-material-theme($indigo-pink-theme);
-    @include app-theme($indigo-pink-theme);
-    .active-link {
-        background-color: mat-color($primary) !important;
-        color: white !important;
-    }
-    .sticky-header {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 56px;
-        z-index: 2;
-        width: 100%;
-        background-color: mat-color($accent);
-    }
+  $primary: mat-palette($mat-indigo);
+  $accent: mat-palette($mat-pink);
+  $indigo-pink-theme: mat-light-theme($primary, $accent);
+  @include angular-material-theme($indigo-pink-theme);
+  @include app-theme($indigo-pink-theme);
+  .sticky-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 56px;
+    z-index: 2;
+    width: 100%;
+    background-color: mat-color($accent);
+  }
 }
 
 .blue-pink {
-    $primary: mat-palette($mat-blue);
-    $accent: mat-palette($mat-pink);
-    $blue-pink-theme: mat-light-theme($primary, $accent);
-    @include angular-material-theme($blue-pink-theme);
-    @include app-theme($blue-pink-theme);
-    .sticky-header {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 56px;
-        z-index: 2;
-        width: 100%;
-        height: 56px;
-        background-color: mat-color($accent);
-    }
+  $primary: mat-palette($mat-blue);
+  $accent: mat-palette($mat-pink);
+  $blue-pink-theme: mat-light-theme($primary, $accent);
+  @include angular-material-theme($blue-pink-theme);
+  @include app-theme($blue-pink-theme);
+  .sticky-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 56px;
+    z-index: 2;
+    width: 100%;
+    height: 56px;
+    background-color: mat-color($accent);
+  }
 }
 
 .yellow-green {
-    $primary: mat-palette($mat-yellow);
-    $accent: mat-palette($mat-green);
-    $yellow-red-theme: mat-dark-theme($primary, $accent);
-    @include angular-material-theme($yellow-red-theme);
-    @include app-theme($yellow-red-theme);
+  $primary: mat-palette($mat-yellow);
+  $accent: mat-palette($mat-green);
+  $yellow-red-theme: mat-dark-theme($primary, $accent);
+  @include angular-material-theme($yellow-red-theme);
+  @include app-theme($yellow-red-theme);
+  color: white;
+  a {
     color: white;
-    a {
-        color: white;
-    }
-    a:active {
-        color: yellow;
-    }
-    .mat-selected {
-        color: mat-color($primary) !important;
-    }
-    .active-link {
-        background-color: mat-color($primary);
-        color: black !important;
-    }
-    .sticky-header {
-        display: inline-block;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 56px;
-        z-index: 2;
-        width: 100%;
-        height: 56px;
-        line-height: 56px;
-        white-space: nowrap;
-        background-color: mat-color($accent);
-    }
+  }
+  a:active {
+    color: yellow;
+  }
+  .mat-selected {
+    color: mat-color($primary) !important;
+  }
+  .sticky-header {
+    display: inline-block;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 56px;
+    z-index: 2;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    white-space: nowrap;
+    background-color: mat-color($accent);
+  }
 }
 
+.app-sidenav {
+  min-width: 250px;
+}
 // Styles from styles.css
 
 /* Font family for Roboto */
@@ -93,10 +95,10 @@ h4,
 h5,
 h6,
 p {
-    /* The outline around any element */
-    outline: none;
-    /* Sets all elements to have Roboto and sans-serif as a fallback font */
-    font-family: Roboto, sans-serif;
+  /* The outline around any element */
+  outline: none;
+  /* Sets all elements to have Roboto and sans-serif as a fallback font */
+  font-family: Roboto, sans-serif;
 }
 
 
@@ -105,7 +107,7 @@ Styles `.hidden` to be not visible
 */
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 
@@ -114,14 +116,9 @@ Styles the <svg> element to use the Material Icon size of 24x24 pixels
 */
 
 svg {
-    height: 24px;
-    width: 24px;
+  height: 24px;
+  width: 24px;
 }
-
-.menu-icon {
-    padding-bottom: 12px;
-}
-
 
 /*
 Progress spinner
@@ -129,21 +126,21 @@ Based on Google Newsstand startup
 */
 
 .is-loading {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 
@@ -152,8 +149,8 @@ More styles for progress spinner
 */
 
 .loading-indicator {
-    width: 50px !important;
-    height: 50px !important;
+  width: 50px !important;
+  height: 50px !important;
 }
 
 
@@ -161,17 +158,17 @@ More styles for progress spinner
 
 .radio-group,
 .section {
-    display: inline-flex;
-    flex-direction: column;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .radio,
 .checkbox {
-    margin: 5px;
+  margin: 5px;
 }
 
 .full-width {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 
@@ -180,11 +177,11 @@ Styles for about.component.html
 */
 
 .about-paragraph {
-    text-indent: 40px;
+  text-indent: 40px;
 }
 
 .about-list {
-    list-style-position: inside;
+  list-style-position: inside;
 }
 
 .toc {}
@@ -199,11 +196,11 @@ button[mat-button]:not(.no-caps),
 button[mat-raised-button]:not(.no-caps),
 a[mat-button]:not(.no-caps),
 a[mat-raised-button]:not(.no-caps) {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 img:not(.shield-badge) {
-    width: 100%;
+  width: 100%;
 }
 
 
@@ -212,8 +209,8 @@ Styles for about page
 */
 
 .about-header {
-    display: inline-block;
-    padding: 8px;
+  display: inline-block;
+  padding: 8px;
 }
 
 
@@ -222,7 +219,7 @@ This will style all children, grandchildren, etc. in `.about-header`
 */
 
 .about-header * {
-    display: inherit !important;
+  display: inherit !important;
 }
 
 
@@ -235,42 +232,46 @@ TODO: Add javascript to fix toolbar to top on browsers which have no support for
 */
 
 .fixed-toolbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-    display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  display: block;
 }
 
 .main-toolbar {
-    z-index: 1;
+  z-index: 1;
 }
 
 .breadcrumb {
-    font-size: initial;
+  font-size: initial;
 }
 
 .margin {
-    margin: 3px;
+  margin: 3px;
 }
 
 .input-width {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 .app-action {
-    display: inline-block;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .project-content,
 .padding-content {
-    padding: 10px;
+  padding: 10px;
+}
+
+.padding-percentage-container {
+  padding: 5%;
 }
 
 
@@ -279,7 +280,7 @@ For listing in `projects
 */
 
 .link-overwrite {
-    text-decoration: underline !important;
+  text-decoration: underline !important;
 }
 
 
@@ -289,37 +290,37 @@ CSS from https://angular.io
 */
 
 .badge {
-    background: #fff;
-    border: 2px solid #607D8B;
-    border-radius: 2px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    color: #607D8B;
-    display: inline-block;
-    font-size: 11px;
-    height: 24px;
-    line-height: 22px;
-    margin: 12px 8px 12px 0;
-    padding: 0 8px;
-    text-align: center;
-    text-transform: uppercase;
+  background: #fff;
+  border: 2px solid #607D8B;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  color: #607D8B;
+  display: inline-block;
+  font-size: 11px;
+  height: 24px;
+  line-height: 22px;
+  margin: 12px 8px 12px 0;
+  padding: 0 8px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .badge.beta {
-    border-color: #8E24AA;
-    color: #8E24AA;
+  border-color: #8E24AA;
+  color: #8E24AA;
 }
 
 .badge.beta:before {
-    content: "beta";
+  content: "beta";
 }
 
 summary.spoiler {
-    padding: 4px;
-    /*background-color: ;*/
+  padding: 4px;
+  /*background-color: ;*/
 }
 
 a {
-    text-decoration: underline;
-    cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }

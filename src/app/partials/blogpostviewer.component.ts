@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ComponentFactory, ComponentFactoryResolver, OnInit, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { BlogRSSReader, BlogStatusUpdate1, Blogpost } from '../../assets/blogposts/app.blogposts';
+import { BlogStatusUpdate1, BlogDeprecatingGitHubPagesChan4077, Blogpost } from '../../assets/blogposts/app.blogposts';
 
 @Component({
   selector: 'blogpost-viewer',
@@ -35,11 +35,11 @@ export class BlogPostViewerComponent implements OnInit {
   ngOnInit() {
     this.blogpostId = this.activatedRoute.snapshot.paramMap.get('id');
     switch (this.blogpostId) {
-      case '2017-08-05-introducing-rss-reader':
-        this.ref = this.resolveComponent(BlogRSSReader);
-        break;
-      case '2017-08-24-status-update-1':
+      case '2017-08-24-blog-status-update-1':
         this.ref = this.resolveComponent(BlogStatusUpdate1);
+        break;
+      case '2019-02-09-deprecating-githubpageschan4077':
+        this.ref = this.resolveComponent(BlogDeprecatingGitHubPagesChan4077);
         break;
     }
     this.getBlogPosts().subscribe(blogPosts => {
